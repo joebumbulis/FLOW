@@ -1,12 +1,18 @@
+import { createStore } from "redux";
+import store from "../store.js";
+import saveAnswer from "../actions/save_answer.js";
+
+const initialState = {};
+
 export default function AppReducer(state, action) {
   if (state === undefined) {
-    return {};
+    return initialState;
   }
 
   switch (action.type) {
-    case "TEST_REDUCER":
-      // DELETE OR CHANGE ME: I AM JUST AN EXAMPLE
-      return Object.assign({}, state, { newData: action.data });
+    case "SAVE_ANSWER":
+      return Object.assign({}, state, { answer: action.answer });
+      console.log(state);
   }
 
   console.log("Unhandled State!");
