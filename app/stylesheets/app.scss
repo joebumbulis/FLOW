@@ -1,10 +1,12 @@
 @import "vars.scss";
+@import "navbar.scss";
+@import "navbar_menu.scss";
 
 
 html {
     body {
         margin: 0;
         padding: 0;
-        background: $two-color;
+        background: $seven-color;
     }
 }

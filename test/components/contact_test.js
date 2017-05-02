@@ -23,7 +23,7 @@ describe("Contact Component", () => {
     expect(component.text()).toContain("Please contact Us");
   });
 
-  it("Should have a link to the about page", () => {
+  it("Should have a link to the input page", () => {
     /* If we are testing a component that uses Link or NavLink or anything else related to react-router
     * Then we will need to wrap the component we are testing in a memory router first.
     * This is useful, because we can also start the router at whatever URL we are testing for that component
@@ -34,6 +34,6 @@ describe("Contact Component", () => {
     */
 
     let component = shallow(<MemoryRouter><Contact /></MemoryRouter>);
-    expect(component.html()).toContain('<a href="/about">Learn About Us</a>');
+    expect(component.html()).toContain('<a href="/input">Learn About Us</a>');
   });
 });
