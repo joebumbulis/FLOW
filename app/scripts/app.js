@@ -8,6 +8,7 @@ import Input from "./components/input.js";
 import Results from "./components/results.js";
 import NavBar from "./components/nav_bar.js";
 import Engagement from "./components/engagement.js";
+import Energy from "./components/energy.js";
 
 export default function app() {
   render(
@@ -19,6 +20,7 @@ export default function app() {
           <Route exact path="/input" component={Input} />
           <Route exact path="/results" component={Results} />
           <Route exact path="/engagement" component={Engagement} />
+          <Route exact path="/energy" component={Energy} />
         </div>
       </Router>
     </Provider>,

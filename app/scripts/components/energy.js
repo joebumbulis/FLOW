@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import { Button } from "react-materialize";
-import addEngagement from "../actions/add_engagement.js";
-import removeEngagement from "../actions/remove_engagement.js";
+import addEnergy from "../actions/add_energy.js";
+import removeEnergy from "../actions/remove_energy.js";
 
-class Engagement extends React.Component {
+class Energy extends React.Component {
   constructor(props) {
     super(props);
     this.addHandler = this.addHandler.bind(this);
@@ -15,23 +15,23 @@ class Engagement extends React.Component {
 
   addHandler(e) {
     e.preventDefault();
-    this.props.dispatch(addEngagement());
+    this.props.dispatch(addEnergy());
   }
 
   removeHandler(e) {
     e.preventDefault();
-    this.props.dispatch(removeEngagement());
+    this.props.dispatch(removeEnergy());
   }
 
   nextHandler(e) {
-    this.props.history.push("/energy");
+    this.props.history.push("/");
   }
 
   render() {
     return (
       <main>
         <form>
-          <div>{this.props.engagement}</div>
+          <div>{this.props.energy}</div>
           <Button
             onClick={this.addHandler}
             floating
@@ -58,4 +58,4 @@ class Engagement extends React.Component {
   }
 }
 
-export default connect(container.allState)(Engagement);
+export default connect(container.allState)(Energy);
