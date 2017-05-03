@@ -1,14 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Link, NavLink } from "react-router-dom";
-import {
-  Navbar,
-  Icon,
-  Button,
-  NavItem,
-  SideNav,
-  SideNavItem
-} from "react-materialize";
+import { Navbar, Icon, Button } from "react-materialize";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -35,7 +28,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         <nav className="navbar" role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />

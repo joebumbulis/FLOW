@@ -18,9 +18,9 @@ export default function app() {
           <NavBar />
           <Route path="/" component={AppRoot} />
           <Route exact path="/input" component={Input} />
-          <Route exact path="/results" component={Results} />
           <Route exact path="/engagement" component={Engagement} />
           <Route exact path="/energy" component={Energy} />
+          <Route exact path="/results" component={Results} />
         </div>
       </Router>
     </Provider>,

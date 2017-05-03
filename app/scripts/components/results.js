@@ -1,4 +1,5 @@
 import React from "react";
+import { Doughnut } from "react-chartjs-2";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import { Button } from "react-materialize";
@@ -6,6 +7,23 @@ import { Button } from "react-materialize";
 class Results extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      data: {
+        labels: ["M", "T", "W", "T", "F", "S", "S"],
+        datasets: [
+          {
+            label: "apples",
+            data: [12, 19, 3, 17, 6, 3, 7],
+            backgroundColor: "rgba(153,255,51,0.4)"
+          },
+          {
+            label: "oranges",
+            data: [2, 29, 5, 5, 2, 3, 10],
+            backgroundColor: "rgba(255,153,0,0.4)"
+          }
+        ]
+      }
+    };
     this.saveHandle = this.saveHandle.bind(this);
   }
 
@@ -16,7 +34,7 @@ class Results extends React.Component {
   render() {
     return (
       <section>
-        <h2>Results</h2>
+        <Doughnut data={this.state.data} /> <h2>Results</h2>
         <div>
           <h3>Engagement:</h3>
           <h3>{this.props.engagement}</h3>

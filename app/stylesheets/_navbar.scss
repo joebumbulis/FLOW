@@ -1,7 +1,10 @@
 @import "vars.scss";
 
 .navbar {
-  background-color: $six-color;
+  background: linear-gradient(to left, #f4c4f3, #fc67fa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // background: linear-gradient(to top, #f7ff00, #db36a4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, #ff512f, #f09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   height: 8rem;
-  width: 130%;
+  width: 100%;
 }

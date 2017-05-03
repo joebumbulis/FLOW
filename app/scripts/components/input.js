@@ -30,9 +30,3 @@ class Input extends React.Component {
 }
 
 export default connect()(Input);
-
-//need input field and button
-//include optional input fields to answer 6 questions: where, who, object, environ, etc
-//to do:
-// submitHandler to call a function that will save the asnwer into the state
-//make the button or the obsubmit to go to the next page on click.89706897897089
