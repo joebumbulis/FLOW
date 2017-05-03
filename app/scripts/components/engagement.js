@@ -24,6 +24,7 @@ class Engagement extends React.Component {
   }
 
   nextHandler(e) {
+    e.preventDefault();
     this.props.history.push("/energy");
   }
 

@@ -24,7 +24,8 @@ class Energy extends React.Component {
   }
 
   nextHandler(e) {
-    this.props.history.push("/");
+    e.preventDefault();
+    this.props.history.push("/results");
   }
 
   render() {

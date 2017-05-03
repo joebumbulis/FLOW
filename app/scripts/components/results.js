@@ -1,31 +1,37 @@
 import React from "react";
+import { connect } from "react-redux";
+import container from "../containers/all.js";
+import { Button } from "react-materialize";
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-
-    this.handleChange = this.handleChange.bind(this);
+    this.saveHandle = this.saveHandle.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      name: e.target.value
-    });
+  saveHandle(e) {
+    e.preventDefault;
   }
 
   render() {
     return (
       <section>
-        <h2>Please contact Us</h2>
-        <form>
-          <input type="text" onChange={this.handleChange} defaultValue="name" />
-          <input type="email" defaultValue="email" />
-          <input type="submit" value="Send" />
-        </form>
+        <h2>Results</h2>
+        <div>
+          <h3>Engagement:</h3>
+          <h3>{this.props.engagement}</h3>
+          <h3>Energy:</h3>
+          <h3>{this.props.energy}</h3>
+          <Button
+            onClick={this.saveHandle}
+            large
+            waves="light"
+            icon="save arrow forward"
+          />
+        </div>
       </section>
     );
   }
 }
 
-export default Results;
+export default connect(container.allState)(Results);
