@@ -9,17 +9,17 @@ class Results extends React.Component {
     super(props);
     this.state = {
       data: {
-        labels: ["M", "T", "W", "T", "F", "S", "S"],
+        labels: ["-5", "-3", "-1", "0", "1", "3", "5"],
         datasets: [
           {
-            label: "apples",
-            data: [12, 19, 3, 17, 6, 3, 7],
-            backgroundColor: "rgba(153,255,51,0.4)"
+            label: "engagement",
+            data: [1, 3, 5, 0, 6, 3, 7],
+            backgroundColor: "#ff512f"
           },
           {
-            label: "oranges",
+            label: "energy",
             data: [2, 29, 5, 5, 2, 3, 10],
-            backgroundColor: "rgba(255,153,0,0.4)"
+            backgroundColor: "#f0e719"
           }
         ]
       }
@@ -34,7 +34,15 @@ class Results extends React.Component {
   render() {
     return (
       <section>
-        <Doughnut data={this.state.data} /> <h2>Results</h2>
+        <Doughnut
+          data={this.state.data}
+          options={{
+            rotation: 1 * Math.PI,
+            circumference: 1 * Math.PI
+          }}
+        />
+        {" "}
+        <h2>Results</h2>
         <div>
           <h3>Engagement:</h3>
           <h3>{this.props.engagement}</h3>
