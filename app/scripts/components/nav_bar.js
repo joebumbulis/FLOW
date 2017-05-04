@@ -13,7 +13,7 @@ class NavBar extends React.Component {
 
   homeClick({ history }) {
     console.log("Home Clicked");
-    return <h2 onClick={() => history.push("/")}>Home</h2>;
+    return <h2 onClick={() => history.push("/feed")}>Home</h2>;
   }
 
   inputClick({ history }) {

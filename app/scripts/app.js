@@ -8,6 +8,7 @@ import Input from "./components/input.js";
 import Results from "./components/results.js";
 import Engagement from "./components/engagement.js";
 import Energy from "./components/energy.js";
+import HomeFeed from "./components/home_feed.js";
 
 export default function app() {
   render(
@@ -15,6 +16,7 @@ export default function app() {
       <Router>
         <div>
           <Route path="/" component={AppRoot} />
+          <Route exact path="/feed" component={HomeFeed} />
           <Route exact path="/input" component={Input} />
           <Route exact path="/engagement" component={Engagement} />
           <Route exact path="/energy" component={Energy} />

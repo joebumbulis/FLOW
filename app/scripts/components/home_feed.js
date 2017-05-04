@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Button, Col, Card, Row, CardPanel } from "react-materialize";
+import _ from "lodash";
+import Feed from "./feed.js";
 
 class HomeFeed extends React.Component {
   constructor(props) {
@@ -8,31 +10,8 @@ class HomeFeed extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <h3>Graph</h3>
-        {this.props.answers.map((answer, i) => {
-          return (
-            <div>
-
-              <div className="row">
-                <Col m={3} s={12}>
-                  <Card
-                    className="blue-grey darken-1"
-                    textClassName="white-text"
-                    title="Card title"
-                    actions={[<a href="#">This is a link</a>]}
-                  >
-                    {answer.answer}
-                  </Card>
-                </Col>;
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
+    return <Feed answers={this.props.answers} />;
   }
 }
 
-export default connect()(HomeFeed);
+export default connect(state => state)(HomeFeed);

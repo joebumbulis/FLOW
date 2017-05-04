@@ -18,7 +18,6 @@ class AppRoot extends React.Component {
     return (
       <main>
         <NavBar />
-        <HomeFeed answers={this.props.answers} />
         <section />
       </main>
     );
