@@ -3,6 +3,7 @@ import { Doughnut } from "react-chartjs-2";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import { Button } from "react-materialize";
+import sendAnswer from "../actions/send_answer.js";
 
 class Results extends React.Component {
   constructor(props) {
@@ -29,6 +30,10 @@ class Results extends React.Component {
 
   saveHandle(e) {
     e.preventDefault;
+    let answer = this.props.answer;
+    let engagement = this.props.engagement;
+    let energy = this.props.energy;
+    this.props.dispatch(sendAnswer(answer, engagement, energy));
   }
 
   render() {
@@ -44,6 +49,8 @@ class Results extends React.Component {
         {" "}
         <h2>Results</h2>
         <div>
+          <h3>Your Activity:</h3>
+          <h3>{this.props.answer}</h3>
           <h3>Engagement:</h3>
           <h3>{this.props.engagement}</h3>
           <h3>Energy:</h3>

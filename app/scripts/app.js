@@ -6,7 +6,6 @@ import { Provider } from "react-redux";
 import AppRoot from "./components/app_root.js";
 import Input from "./components/input.js";
 import Results from "./components/results.js";
-import NavBar from "./components/nav_bar.js";
 import Engagement from "./components/engagement.js";
 import Energy from "./components/energy.js";
 
@@ -15,7 +14,6 @@ export default function app() {
     <Provider store={store}>
       <Router>
         <div>
-          <NavBar />
           <Route path="/" component={AppRoot} />
           <Route exact path="/input" component={Input} />
           <Route exact path="/engagement" component={Engagement} />

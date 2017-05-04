@@ -3,6 +3,7 @@ import store from "../store.js";
 import saveAnswer from "../actions/save_answer.js";
 
 const initialState = {
+  answers: [],
   answer: "",
   engagement: 0,
   energy: 0
@@ -14,6 +15,12 @@ export default function AppReducer(state, action) {
   }
 
   switch (action.type) {
+    case "LOADED":
+      let loadedAnswers = state.answers.slice();
+      let savedAnswers = action.answer;
+      loadedAnswers.push(savedAnswers);
+      return Object.assign({}, state, { answers: loadedAnswers });
+
     case "SAVE_ANSWER":
       return Object.assign({}, state, { answer: action.answer });
       console.log(state);

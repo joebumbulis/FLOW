@@ -9,14 +9,14 @@ body
 h2
 {
   text-decoration: none;
-  color: $five-color;
+  color: #ff512f;
 
   transition: color 0.3s ease;
 }
 
 h2:hover
 {
-  color: $seven-color;
+  color: #f09819;
 }
 
 #menuToggle
@@ -55,7 +55,7 @@ h2:hover
   margin-bottom: 5px;
   position: relative;
 
-  background: $five-color;
+  background: #f7ff00;
   border-radius: 3px;
 
   z-index: 1;
@@ -85,7 +85,7 @@ h2:hover
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: $five-color;
+  background: #f7ff00;
 }
 
 /*
@@ -118,7 +118,7 @@ h2:hover
   padding: 50px;
   padding-top: 125px;
 
-  background: $six-color;
+  background: #0ed2f7;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
