@@ -17,7 +17,6 @@ class HomeFeed extends React.Component {
   // }
 
   render() {
-    console.log("HI", this.props.answers);
     return (
       <div>
         <Graph answers={this.props.answers} />

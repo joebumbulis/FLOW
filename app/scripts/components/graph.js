@@ -5,18 +5,19 @@ import { Line } from "react-chartjs-2";
 class Graph extends React.Component {
   constructor(props) {
     super(props);
+    // this.setPropis = this.setPropis.bind(this);
     this.state = {
       data: {
         labels: [],
         datasets: [
           {
             label: "engagement",
-            data: [1, 3, 5, 0, 6, 3, 7],
+            data: [],
             backgroundColor: "#ff512f"
           },
           {
             label: "energy",
-            data: [2, 29, 5, 5, 2, 3, 10],
+            data: [],
             backgroundColor: "#f0e719"
           }
         ]
@@ -24,16 +25,44 @@ class Graph extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.setPropis(this.props);
+  }
+
   componentWillReceiveProps(nextProps) {
-    console.log("YOYUOYOYO", this.props.answers);
+    this.setPropis(nextProps);
+  }
+
+  setPropis(props) {
     let moment = require("moment");
-    var timeArr = this.props.answers.map((answer, i) => {
+    var timeArr = props.answers.map((answer, i) => {
       return moment(answer.created).format("MMM Do YY, h:mm a");
     });
+    var energyArr = props.answers.map((answer, i) => {
+      return answer.energy;
+    });
+    var engagementArr = props.answers.map((answer, i) => {
+      return answer.engagement;
+    });
 
-    var foo = Object.assign({}, this.state.data, { labels: timeArr });
+    var dataArr = [energyArr, engagementArr];
+    var counter = -1;
+    var newDatasets = this.state.data.datasets.map(dataset => {
+      counter++;
+      return {
+        label: dataset.label,
+        data: dataArr[counter],
+        backgroundColor: dataset.backgroundColor
+      };
+    });
+
+    var userData = Object.assign({}, this.state.data, {
+      labels: timeArr,
+      datasets: newDatasets
+    });
+
     this.setState({
-      data: foo
+      data: userData
     });
   }
 

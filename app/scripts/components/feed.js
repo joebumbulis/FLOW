@@ -17,7 +17,7 @@ class Feed extends React.Component {
         {sortedAnswers.map((answer, i) => {
           let time = moment(answer.created).format("MMM Do YY, h:mm a");
           return (
-            <div>
+            <div key={i}>
               <div className="row">
                 <Col m={6} s={12}>
                   <Card
