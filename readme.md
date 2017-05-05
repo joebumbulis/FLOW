@@ -21,6 +21,7 @@ Features:
 * Yelp
 *
 
+
 ## data modeling: list all front end models/pages/components/actions you anticipate using for your app. provide sample JSON for each model. explain relationships between models where they exist.
 
 ## routes: list all anticipated routes will your application have. describe the basic flow of a user through your application
@@ -28,3 +29,11 @@ Features:
 ## libraries/special features: list any 3rd party libraries or special features you will use for your app. include things such as image uploading, geolocation, etc.
 * dayz- React Calendar
 * chart.js
+
+* Moment.js
+* graph.js
+* materialize
+* grommet
+* lodash
+* react
+* react-redux

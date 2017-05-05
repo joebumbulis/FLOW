@@ -4,13 +4,20 @@ import { Button, Col, Card, Row, CardPanel } from "react-materialize";
 import _ from "lodash";
 import Feed from "./feed.js";
 import Graph from "./graph.js";
+import getFlowees from "../actions/get_flowees.js";
 
 class HomeFeed extends React.Component {
   constructor(props) {
     super(props);
+    // this.props.dispatch(getFlowees());
   }
 
+  // componentWillMount() {
+  //   console.log("loading");
+  // }
+
   render() {
+    console.log("HI", this.props.answers);
     return (
       <div>
         <Graph answers={this.props.answers} />

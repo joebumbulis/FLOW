@@ -30,7 +30,7 @@ class NavBar extends React.Component {
     return (
       <div className="row">
         <nav className="navbar" role="navigation">
-          <div id="menuToggle">
+          <div className="menuToggle" id="menuToggle">
             <input type="checkbox" />
             <span />
             <span />

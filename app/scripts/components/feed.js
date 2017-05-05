@@ -11,8 +11,6 @@ class Feed extends React.Component {
   render() {
     let moment = require("moment");
     let sortedAnswers = _.sortBy(this.props.answers, ["created"]);
-    console.log(this.props.answers);
-    console.log(sortedAnswers);
     return (
       <div>
         <h3>Graph</h3>
