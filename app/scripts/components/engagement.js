@@ -4,6 +4,7 @@ import container from "../containers/all.js";
 import { Button } from "react-materialize";
 import addEngagement from "../actions/add_engagement.js";
 import removeEngagement from "../actions/remove_engagement.js";
+import Gauge from "./gauge.js";
 
 class Engagement extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Engagement extends React.Component {
   render() {
     return (
       <main>
+        <Gauge />
         <form>
           <div>{this.props.engagement}</div>
           <Button

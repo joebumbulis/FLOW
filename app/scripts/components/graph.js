@@ -5,7 +5,6 @@ import { Line } from "react-chartjs-2";
 class Graph extends React.Component {
   constructor(props) {
     super(props);
-    // this.setPropis = this.setPropis.bind(this);
     this.state = {
       data: {
         labels: [],

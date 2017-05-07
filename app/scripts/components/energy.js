@@ -31,6 +31,7 @@ class Energy extends React.Component {
   render() {
     return (
       <main>
+
         <form>
           <div>{this.props.energy}</div>
           <Button

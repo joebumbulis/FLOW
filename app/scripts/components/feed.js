@@ -12,8 +12,7 @@ class Feed extends React.Component {
     let moment = require("moment");
     let sortedAnswers = _.sortBy(this.props.answers, ["created"]);
     return (
-      <div>
-        <h3>Graph</h3>
+      <div className="feed">
         {sortedAnswers.map((answer, i) => {
           let time = moment(answer.created).format("MMM Do YY, h:mm a");
           return (

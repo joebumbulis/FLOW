@@ -20,6 +20,7 @@ class Input extends React.Component {
   render() {
     return (
       <main>
+
         <form onSubmit={this.submitHandler}>
           <input ref="answer" placeholder="What have you done or are doing?" />
           <Button large waves="light" icon="save arrow forward" />
