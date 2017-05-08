@@ -4,7 +4,7 @@ import container from "../containers/all.js";
 import { Button } from "react-materialize";
 import addEngagement from "../actions/add_engagement.js";
 import removeEngagement from "../actions/remove_engagement.js";
-import Gauge from "./gauge.js";
+import { Box, Meter, Label, Value } from "grommet";
 
 class Engagement extends React.Component {
   constructor(props) {
@@ -32,7 +32,31 @@ class Engagement extends React.Component {
   render() {
     return (
       <main>
-        <Gauge />
+        <Box responsive={false} align="center">
+          <Meter
+            type="arc"
+            vertical={false}
+            min={0}
+            max={10}
+            value={this.props.engagement + 5}
+            onActive={() => {}}
+          />
+          <Box
+            direction="row"
+            justify="between"
+            align="center"
+            pad={{ between: "small" }}
+            responsive={false}
+          >
+            <Label size="small">
+              -5
+            </Label>
+            <Value value={this.props.engagement} units="engagement" />
+            <Label size="small">
+              5
+            </Label>
+          </Box>
+        </Box>
         <form>
           <div>{this.props.engagement}</div>
           <Button

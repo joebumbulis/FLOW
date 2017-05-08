@@ -4,6 +4,7 @@ import container from "../containers/all.js";
 import { Button } from "react-materialize";
 import addEnergy from "../actions/add_energy.js";
 import removeEnergy from "../actions/remove_energy.js";
+import { Box, Meter, Label, Value } from "grommet";
 
 class Energy extends React.Component {
   constructor(props) {
@@ -31,7 +32,31 @@ class Energy extends React.Component {
   render() {
     return (
       <main>
-
+        <Box responsive={false} align="center">
+          <Meter
+            type="arc"
+            vertical={false}
+            min={0}
+            max={10}
+            value={this.props.energy + 5}
+            onActive={() => {}}
+          />
+          <Box
+            direction="row"
+            justify="between"
+            align="center"
+            pad={{ between: "small" }}
+            responsive={false}
+          >
+            <Label size="small">
+              -5
+            </Label>
+            <Value value={this.props.energy} units="energy" />
+            <Label size="small">
+              5
+            </Label>
+          </Box>
+        </Box>
         <form>
           <div>{this.props.energy}</div>
           <Button

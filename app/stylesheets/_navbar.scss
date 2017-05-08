@@ -3,7 +3,7 @@
 .navbar {
   // background: linear-gradient(to left, #f4c4f3, #fc67fa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   // background: linear-gradient(to top, #f7ff00, #db36a4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  // background: linear-gradient(to top, #ff512f, #f09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // background: linear-gradient(to top, $one-color, #f09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: #fff;
   height: 4rem;
   width: 100%;
@@ -12,7 +12,7 @@
   z-index: 1;
   // box-sizing: border-box;
   margin: 0 auto;
-  border-bottom: .1rem solid #ff512f;
+  border-bottom: .1rem solid $one-color;
 }
 
 .menuToggle {
@@ -23,14 +23,14 @@
   margin: 0 1rem;
   float: left;
   width: 20%;
-  color: #ff512f;
+  color: $one-color;
   font-weight: lighter;
 }
 
 .brand {
   font-size: 3rem;
   font-family: $one-font;
-  color: #ff512f;
+  color: $one-color;
   width: 25%;
   margin: 0 auto;
 

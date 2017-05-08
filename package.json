@@ -34,6 +34,7 @@
   "dependencies": {
     "chart.js": "^2.5.0",
     "global": "^4.3.2",
+    "grommet": "^1.4.0",
     "grommet-cli": "^3.1.1",
     "jquery": "^3.2.1",
     "materialize": "^1.0.0",

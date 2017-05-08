@@ -44,6 +44,7 @@ var config = {
               options: {
                 includePaths: [
                   "./node_modules",
+                  "./node_modules/grommet/scss",
                   "./node_modules/grommet/node_modules"
                 ]
               }
