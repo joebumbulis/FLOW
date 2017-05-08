@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { Route, Link, NavLink } from "react-router-dom";
 import { Navbar, Icon, Button } from "react-materialize";
 
-class NavBar extends React.Component {
+class InputNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.homeClick = this.homeClick.bind(this);
     this.inputClick = this.inputClick.bind(this);
-    // this.resultsClick = this.resultsClick.bind(this);
+    this.resultsClick = this.resultsClick.bind(this);
   }
 
   homeClick({ history }) {
@@ -20,18 +20,21 @@ class NavBar extends React.Component {
 
   inputClick({ history }) {
     console.log("input clicked");
-    return <h2 className="input" onClick={() => history.push("/input")}>+</h2>;
+    return <h2 className="input" onClick={() => history.push("/feed")}>x</h2>;
   }
 
-  // resultsClick({ history }) {
-  //   console.log("results clicked");
-  //   return <h2 onClick={() => history.push("/results")}>Results</h2>;
-  // }
+  resultsClick({ history }) {
+    console.log("results clicked");
+    return (
+      <h2 className="save" onClick={() => history.push("/results")}>save</h2>
+    );
+  }
 
   render() {
     return (
       <div className="navbar">
         <Route render={this.inputClick} />
+        <Route render={this.resultsClick} />
         <Route render={this.homeClick} />
 
       </div>
@@ -55,4 +58,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default InputNavBar;

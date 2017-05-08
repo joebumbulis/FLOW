@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Button } from "react-materialize";
 import saveAnswer from "../actions/save_answer.js";
-import NavBar from "./nav_bar.js";
+import InputNavBar from "./input_navbar.js";
 
 class Input extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Input extends React.Component {
   render() {
     return (
       <main className="input-page">
-        <NavBar />
+        <InputNavBar />
         <form onSubmit={this.submitHandler}>
           <input ref="answer" placeholder="What have you done or are doing?" />
           <Button large waves="light" icon="save arrow forward" />

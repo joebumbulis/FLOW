@@ -35,7 +35,20 @@ var config = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", "sass-loader"],
+          use: [
+            {
+              loader: "css-loader"
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                includePaths: [
+                  "./node_modules",
+                  "./node_modules/grommet/node_modules"
+                ]
+              }
+            }
+          ],
           publicPath: "."
         })
       },
