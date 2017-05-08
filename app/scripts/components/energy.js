@@ -48,18 +48,12 @@ class Energy extends React.Component {
             pad={{ between: "small" }}
             responsive={false}
           >
-            <Label size="small">
-              -5
-            </Label>
             <Value value={this.props.energy} units="energy" />
-            <Label size="small">
-              5
-            </Label>
           </Box>
         </Box>
         <form>
-          <div>{this.props.energy}</div>
           <Button
+            className="add-button green accent-3"
             onClick={this.addHandler}
             floating
             large
@@ -67,6 +61,7 @@ class Energy extends React.Component {
             icon="add"
           />
           <Button
+            className="remove-button"
             onClick={this.removeHandler}
             floating
             large

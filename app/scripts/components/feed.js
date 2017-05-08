@@ -30,10 +30,14 @@ class Feed extends React.Component {
                       {time}
                     </div>
                     <div className="answers-card">
+
                       <div className="answer-eng">
+                        <div className="eng-box" />
                         Engagement: {answer.engagement}
                       </div>
+
                       <div className="answer-energy">
+                        <div className="ene-box" />
                         Energy: {answer.energy}
                       </div>
                     </div>

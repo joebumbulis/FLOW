@@ -48,18 +48,12 @@ class Engagement extends React.Component {
             pad={{ between: "small" }}
             responsive={false}
           >
-            <Label size="small">
-              -5
-            </Label>
             <Value value={this.props.engagement} units="engagement" />
-            <Label size="small">
-              5
-            </Label>
           </Box>
         </Box>
         <form>
-          <div>{this.props.engagement}</div>
           <Button
+            className="add-button"
             onClick={this.addHandler}
             floating
             large
@@ -67,6 +61,7 @@ class Engagement extends React.Component {
             icon="add"
           />
           <Button
+            className="remove-button"
             onClick={this.removeHandler}
             floating
             large
