@@ -1,15 +1,17 @@
 @import "vars.scss";
 @import "navbar.scss";
-@import "navbar_menu.scss";
+// @import "navbar_menu.scss";
 @import "gauge.scss";
 @import "graph.scss";
 @import "feed.scss";
+@import "input-page.scss";
+@import "input-navbar.scss";
 
 html {
     body {
         margin: 0;
         padding: 0;
-        background: #fff;
+        background: #f6f6f6;
         // background: linear-gradient(to bottom, #b2fefa, #0ed2f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         background-attachment: fixed;
     }

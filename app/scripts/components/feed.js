@@ -17,16 +17,26 @@ class Feed extends React.Component {
           let time = moment(answer.created).format("MMM Do YY, h:mm a");
           return (
             <div key={i}>
+
               <div className="row">
+
                 <Col m={6} s={12}>
                   <Card
-                    className="blue-grey darken-1"
-                    textClassName="white-text"
+                    className="white"
+                    textClassName="black-text"
                     title={answer.answer}
                   >
-                    {time}
-                    Engagement: {answer.engagement}
-                    Energy: {answer.energy}
+                    <div className="card-time">
+                      {time}
+                    </div>
+                    <div className="answers-card">
+                      <div className="answer-eng">
+                        Engagement: {answer.engagement}
+                      </div>
+                      <div className="answer-energy">
+                        Energy: {answer.energy}
+                      </div>
+                    </div>
                   </Card>
                 </Col>
               </div>

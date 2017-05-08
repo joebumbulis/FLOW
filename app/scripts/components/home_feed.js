@@ -5,6 +5,7 @@ import _ from "lodash";
 import Feed from "./feed.js";
 import Graph from "./graph.js";
 import getFlowees from "../actions/get_flowees.js";
+import NavBar from "./nav_bar.js";
 
 class HomeFeed extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class HomeFeed extends React.Component {
   render() {
     return (
       <div>
+        <NavBar />
         <Graph answers={this.props.answers} />
         <Feed answers={this.props.answers} />
       </div>

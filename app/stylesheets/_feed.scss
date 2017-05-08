@@ -1,6 +1,32 @@
 .feed {
-  margin-top: 22rem;
+  margin-top: 20rem;
 }
 .card {
   background: #fff;
+  margin: 0;
+}
+
+.answers-card {
+ clear:both;
+ text-align: center;
+}
+
+.card-time {
+  float: right;
+  margin: 0 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.answer-energy {
+  float: right;
+  background: #f0e719;
+  width: 50%;
+}
+
+.answer-eng {
+  float: left;
+  background: #ff512f;
+  width: 50%;
 }

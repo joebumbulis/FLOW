@@ -18,7 +18,6 @@ class AppRoot extends React.Component {
   render() {
     return (
       <main>
-        <NavBar />
         <section />
       </main>
     );
