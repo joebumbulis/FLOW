@@ -9,8 +9,21 @@
     height: 3rem;
     border: none;
     border: .1rem rgba(185, 183, 184, 0.8) solid;
+    margin-bottom: 1.5rem;
   }
-  // .input-field input[type=text]:focus {
-  //    color: #000;
-  //  }
+.number-value {
+  color: $one-color;
 }
+.description {
+  margin-bottom: 0;
+}
+}
+
+.input-field {
+  background: #fff;
+  margin-bottom: 0;
+}
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid $one-color;
+     box-shadow: 0 1px 0 0 $one-color;
+   }

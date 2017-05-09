@@ -4,6 +4,7 @@ import { Route, Link, NavLink } from "react-router-dom";
 import NavBar from "./nav_bar.js";
 import HomeFeed from "./home_feed.js";
 import getFlowees from "../actions/get_flowees.js";
+import LandingPage from "./landing_page.js";
 
 class AppRoot extends React.Component {
   constructor(props) {
@@ -16,11 +17,7 @@ class AppRoot extends React.Component {
   }
 
   render() {
-    return (
-      <main>
-        <section />
-      </main>
-    );
+    return <main />;
   }
 }
 

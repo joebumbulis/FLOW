@@ -23,18 +23,14 @@ class InputNavBar extends React.Component {
 
   inputClick({ history }) {
     console.log("input clicked");
-    return <h2 className="input" onClick={() => history.push("/feed")}>x</h2>;
+    return (
+      <h2 className="cancel" onClick={() => history.push("/feed")}>cancel</h2>
+    );
   }
 
   saveAnswer() {
-    console.log("clicked save answer");
-    let answer = this.props.refs.answer.value;
-    let engagement = this.props.engagement;
-    let energy = this.props.energy;
-    console.log(answer, engagement, energy);
-    // this.props.dispatch(sendAnswer(answer, engagement, energy));
+    this.props.saveAnswer();
   }
-
   // resultsClick({ history }) {
   //   console.log("results clicked");
   //   onClick={this.saveAnswer};

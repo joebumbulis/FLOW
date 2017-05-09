@@ -6,6 +6,7 @@ import saveAnswer from "../actions/save_answer.js";
 import InputNavBar from "./input_navbar.js";
 import Engagement from "./engagement.js";
 import Energy from "./energy.js";
+import sendAnswer from "../actions/send_answer.js";
 
 class Input extends React.Component {
   constructor(props) {
@@ -14,18 +15,10 @@ class Input extends React.Component {
       clickEnergy: false,
       clickEngagement: false
     };
-    this.submitHandler = this.submitHandler.bind(this);
     this.clickEngagement = this.clickEngagement.bind(this);
     this.clickEnergy = this.clickEnergy.bind(this);
     this.closeModal = this.closeModal.bind(this);
-  }
-
-  submitHandler(e) {
-    e.preventDefault();
-    console.log("saving input");
-    let inputAnswer = this.refs.answer.value;
-    this.props.history.push("/engagement");
-    this.props.dispatch(saveAnswer(inputAnswer));
+    this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   clickEngagement(e) {
@@ -51,6 +44,19 @@ class Input extends React.Component {
     });
   }
 
+  saveAnswer() {
+    console.log("clicked save answer");
+    let answer = this.refs.answer.value;
+    let engagement = this.props.engagement;
+    let energy = this.props.energy;
+    console.log(answer, engagement, energy);
+    if ((answer = " ")) {
+      alert("set focus on input");
+    } else {
+      this.props.dispatch(sendAnswer(answer, engagement, energy));
+    }
+  }
+
   render() {
     var modal = "";
     if (this.state.clickEngagement) {
@@ -62,25 +68,33 @@ class Input extends React.Component {
     return (
       <main className="input-page">
         {modal}
-        <InputNavBar />
+        <InputNavBar saveAnswer={this.saveAnswer} />
         <form onSubmit={this.submitHandler}>
           <div className="modal-buttons">
             <button onClick={this.clickEngagement}>
-              Engagement: {this.props.engagement}
+              Engagement:
+              {" "}
+              <span className="number-value">{this.props.engagement}</span>
             </button>
             <button onClick={this.clickEnergy}>
-              Energy: {this.props.energy}
+              Energy: <span className="number-value">{this.props.energy}</span>
             </button>
           </div>
           <div className="input-field">
             <input
-              className="validate input-field"
+              type="text"
+              className="validate"
+              required
               ref="answer"
               placeholder="What are you doing?"
             />
+            <input
+              className="description"
+              type="text"
+              ref="description"
+              placeholder="Description"
+            />
           </div>
-          <input ref="description" placeholder="Description" />
-          <Button large waves="light" icon="save arrow forward" />
         </form>
       </main>
     );

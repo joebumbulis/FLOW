@@ -7,6 +7,8 @@
 @import "gauge.scss";
 @import "modal.scss";
 @import "grommet-core/index.scss";
+@import "landing_page.scss";
+@import "login-page.scss";
 
 
 html {
@@ -14,7 +16,6 @@ html {
         margin: 0;
         padding: 0;
         background: #f6f6f6;
-        // background: linear-gradient(to bottom, #b2fefa, #0ed2f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         background-attachment: fixed;
     }
 }

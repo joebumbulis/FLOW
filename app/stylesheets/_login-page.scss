@@ -1,0 +1,38 @@
+.login-navbar {
+  background: #fff;
+  text-align: center;
+}
+
+.login-inputs{
+  margin: 0;
+  margin-top: 4rem;
+
+}
+
+.login-navbar * {
+  color: black;
+  display: inline-block;
+}
+.login-back {
+  float: left;
+  // width: 20%;
+  font-size: 1rem;
+  color: $one-color
+}
+.arrow-icon {
+  float: left;
+  color: $one-color
+
+}
+
+.login-title {
+  margin: 0 auto;
+  font-size: 2rem;
+
+}
+
+.login-btn {
+  float: right;
+  color: $one-color
+
+}
