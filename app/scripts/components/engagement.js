@@ -12,6 +12,7 @@ class Engagement extends React.Component {
     this.addHandler = this.addHandler.bind(this);
     this.removeHandler = this.removeHandler.bind(this);
     this.nextHandler = this.nextHandler.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   addHandler(e) {
@@ -27,6 +28,11 @@ class Engagement extends React.Component {
   nextHandler(e) {
     e.preventDefault();
     this.props.history.push("/energy");
+  }
+
+  closeModal(e) {
+    e.preventDefault();
+    this.props.closeModal();
   }
 
   render() {
@@ -54,7 +60,7 @@ class Engagement extends React.Component {
           </Box>
           <form>
             <Button
-              className="add-button"
+              className="add-button  red accent-3"
               onClick={this.addHandler}
               floating
               large
@@ -62,19 +68,17 @@ class Engagement extends React.Component {
               icon="add"
             />
             <Button
-              className="remove-button"
+              className="remove-button  red accent-3"
               onClick={this.removeHandler}
               floating
               large
               waves="light"
               icon="remove"
             />
-            <Button
-              onClick={this.nextHandler}
-              large
-              waves="light"
-              icon="save arrow forward"
-            />
+            <div>
+              <button onClick={this.closeModal}>cancel</button>
+              <button onClick={this.closeModal}>OK</button>
+            </div>
           </form>
         </div>
       </main>

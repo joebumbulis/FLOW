@@ -12,6 +12,7 @@ class Energy extends React.Component {
     this.addHandler = this.addHandler.bind(this);
     this.removeHandler = this.removeHandler.bind(this);
     this.nextHandler = this.nextHandler.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   addHandler(e) {
@@ -27,6 +28,11 @@ class Energy extends React.Component {
   nextHandler(e) {
     e.preventDefault();
     this.props.history.push("/results");
+  }
+
+  closeModal(e) {
+    e.preventDefault();
+    this.props.closeModal();
   }
 
   render() {
@@ -54,7 +60,7 @@ class Energy extends React.Component {
           </Box>
           <form>
             <Button
-              className="add-button green accent-3"
+              className="add-button  red accent-3"
               onClick={this.addHandler}
               floating
               large
@@ -62,14 +68,19 @@ class Energy extends React.Component {
               icon="add"
             />
             <Button
-              className="remove-button"
+              className="remove-button  red accent-3"
               onClick={this.removeHandler}
               floating
               large
               waves="light"
               icon="remove"
             />
+            <div>
+              <button onClick={this.closeModal}>cancel</button>
+              <button onClick={this.closeModal}>OK</button>
+            </div>
             <Button
+              className=" red accent-3"
               onClick={this.nextHandler}
               large
               waves="light"

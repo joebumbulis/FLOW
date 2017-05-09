@@ -16,6 +16,7 @@ class Input extends React.Component {
     this.submitHandler = this.submitHandler.bind(this);
     this.clickEngagement = this.clickEngagement.bind(this);
     this.clickEnergy = this.clickEnergy.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   submitHandler(e) {
@@ -42,13 +43,20 @@ class Input extends React.Component {
     });
   }
 
+  closeModal() {
+    this.setState({
+      clickEnergy: false,
+      clickEngagement: false
+    });
+  }
+
   render() {
     var modal = "";
     if (this.state.clickEngagement) {
-      modal = <Engagement />;
+      modal = <Engagement closeModal={this.closeModal} />;
     }
     if (this.state.clickEnergy) {
-      modal = <Energy />;
+      modal = <Energy closeModal={this.closeModal} />;
     }
     return (
       <main className="input-page">
