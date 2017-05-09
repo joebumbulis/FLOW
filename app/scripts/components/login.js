@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
-import { Navbar, Icon, Button } from "react-materialize";
+import { Navbar, Icon, Button, Input } from "react-materialize";
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -20,8 +20,17 @@ class LogIn extends React.Component {
         </nav>
         <form>
           <div className="login-inputs input-field">
-            <input href="email" type="text" placeholder="email" />
-            <input href="password" text="password" placeholder="password" />
+            <Input href="email" type="email" placeholder="email">
+              <Icon>email</Icon>
+            </Input>
+            <Input
+              className="pswd-input"
+              href="password"
+              type="password"
+              placeholder="password"
+            >
+              <Icon>lock_outline</Icon>
+            </Input>
           </div>
         </form>
       </div>

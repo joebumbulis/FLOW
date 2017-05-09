@@ -6,7 +6,6 @@
 .login-inputs{
   margin: 0;
   margin-top: 4rem;
-
 }
 
 .login-navbar * {
@@ -33,6 +32,29 @@
 
 .login-btn {
   float: right;
-  color: $one-color
+  color: $one-color;
+  margin-right: 1rem;
+}
 
+.input-field input[type=email] {
+    margin: 0;
+    padding-left: 2rem;
+   }
+.input-field input[type=password] {
+    margin: 0;
+    padding-left: 2rem;
+   }
+
+.input-field input[type=password]:focus {
+     border-bottom: 1px solid $one-color;
+     box-shadow: 0 1px 0 0 $one-color;
+   }
+
+.input-field input[type=email]:focus {
+     border-bottom: 1px solid $one-color;
+     box-shadow: 0 1px 0 0 $one-color;
+   }
+
+.input-field icon:focus {
+  color: $one-color
 }
