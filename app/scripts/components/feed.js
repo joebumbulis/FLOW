@@ -22,7 +22,7 @@ class Feed extends React.Component {
 
                 <Col m={6} s={12}>
                   <Card
-                    className="white"
+                    className="white hoverable"
                     textClassName="black-text"
                     title={answer.answer}
                   >

@@ -8,23 +8,6 @@ import sendAnswer from "../actions/send_answer.js";
 class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: {
-        labels: ["-5", "-3", "-1", "0", "1", "3", "5"],
-        datasets: [
-          {
-            label: "engagement",
-            data: [1, 3, 5, 0, 6, 3, 7],
-            backgroundColor: "#ff512f"
-          },
-          {
-            label: "energy",
-            data: [2, 29, 5, 5, 2, 3, 10],
-            backgroundColor: "#f0e719"
-          }
-        ]
-      }
-    };
     this.saveHandle = this.saveHandle.bind(this);
   }
 
@@ -39,14 +22,7 @@ class Results extends React.Component {
   render() {
     return (
       <section>
-        <Doughnut
-          data={this.state.data}
-          options={{
-            rotation: 1 * Math.PI,
-            circumference: 1 * Math.PI
-          }}
-        />
-        {" "}
+
         <h2>Results</h2>
         <div>
           <h3>Your Activity:</h3>

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import container from "../containers/all.js";
 import { Button } from "react-materialize";
 import saveAnswer from "../actions/save_answer.js";
 import InputNavBar from "./input_navbar.js";
@@ -64,11 +65,20 @@ class Input extends React.Component {
         <InputNavBar />
         <form onSubmit={this.submitHandler}>
           <div className="modal-buttons">
-            <button onClick={this.clickEngagement}>Engagement</button>
-            <button onClick={this.clickEnergy}>Energy</button>
+            <button onClick={this.clickEngagement}>
+              Engagement: {this.props.engagement}
+            </button>
+            <button onClick={this.clickEnergy}>
+              Energy: {this.props.energy}
+            </button>
           </div>
-          <label>Activity</label>
-          <input ref="answer" placeholder="What are you doing?" />
+          <div className="input-field">
+            <input
+              className="validate input-field"
+              ref="answer"
+              placeholder="What are you doing?"
+            />
+          </div>
           <input ref="description" placeholder="Description" />
           <Button large waves="light" icon="save arrow forward" />
         </form>
@@ -77,4 +87,4 @@ class Input extends React.Component {
   }
 }
 
-export default connect()(Input);
+export default connect(container.allState)(Input);

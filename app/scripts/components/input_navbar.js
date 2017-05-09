@@ -1,14 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
+import container from "../containers/all.js";
 import { Route, Link, NavLink } from "react-router-dom";
 import { Navbar, Icon, Button } from "react-materialize";
+import sendAnswer from "../actions/send_answer.js";
 
 class InputNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.homeClick = this.homeClick.bind(this);
     this.inputClick = this.inputClick.bind(this);
-    this.resultsClick = this.resultsClick.bind(this);
+    // this.resultsClick = this.resultsClick.bind(this);
+    this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   homeClick({ history }) {
@@ -23,20 +26,27 @@ class InputNavBar extends React.Component {
     return <h2 className="input" onClick={() => history.push("/feed")}>x</h2>;
   }
 
-  resultsClick({ history }) {
-    console.log("results clicked");
-    return (
-      <h2 className="save" onClick={() => history.push("/results")}>save</h2>
-    );
+  saveAnswer() {
+    console.log("clicked save answer");
+    let answer = this.props.refs.answer.value;
+    let engagement = this.props.engagement;
+    let energy = this.props.energy;
+    console.log(answer, engagement, energy);
+    // this.props.dispatch(sendAnswer(answer, engagement, energy));
   }
+
+  // resultsClick({ history }) {
+  //   console.log("results clicked");
+  //   onClick={this.saveAnswer};
+  //   return <h2 className="save" onClick={() => history.push("/feed")}>save</h2>;
+  // }
 
   render() {
     return (
       <div className="navbar">
         <Route render={this.inputClick} />
-        <Route render={this.resultsClick} />
+        <h2 className="save" onClick={this.saveAnswer}>save</h2>
         <Route render={this.homeClick} />
-
       </div>
     );
 
@@ -58,4 +68,4 @@ class InputNavBar extends React.Component {
   }
 }
 
-export default InputNavBar;
+export default connect(container.allState)(InputNavBar);

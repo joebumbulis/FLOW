@@ -11,8 +11,10 @@
   // padding-top: 5rem;
   background-color: rgba(246, 246, 246, 0.8);
   opacity: .93;
-  // .btn {
-  //   text-align: center;
-  //   width: 100%;
-  // }
+  button {
+    margin-top: 1rem;
+  }
+  .ok-btn {
+    color: $one-color;
+  }
 };

@@ -11,7 +11,6 @@ class Energy extends React.Component {
     super(props);
     this.addHandler = this.addHandler.bind(this);
     this.removeHandler = this.removeHandler.bind(this);
-    this.nextHandler = this.nextHandler.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -25,11 +24,6 @@ class Energy extends React.Component {
     this.props.dispatch(removeEnergy());
   }
 
-  nextHandler(e) {
-    e.preventDefault();
-    this.props.history.push("/results");
-  }
-
   closeModal(e) {
     e.preventDefault();
     this.props.closeModal();
@@ -37,8 +31,8 @@ class Energy extends React.Component {
 
   render() {
     return (
-      <main className="modal-container">
-        <div className="modal-box">
+      <main className="modal-container scale-out">
+        <div className="modal-box scale-transition">
           <Box responsive={false} align="center">
             <Meter
               type="arc"
@@ -77,15 +71,8 @@ class Energy extends React.Component {
             />
             <div>
               <button onClick={this.closeModal}>cancel</button>
-              <button onClick={this.closeModal}>OK</button>
+              <button className="ok-btn" onClick={this.closeModal}>OK</button>
             </div>
-            <Button
-              className=" red accent-3"
-              onClick={this.nextHandler}
-              large
-              waves="light"
-              icon="save arrow forward"
-            />
           </form>
         </div>
       </main>

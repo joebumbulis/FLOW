@@ -11,7 +11,6 @@ class Engagement extends React.Component {
     super(props);
     this.addHandler = this.addHandler.bind(this);
     this.removeHandler = this.removeHandler.bind(this);
-    this.nextHandler = this.nextHandler.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -23,11 +22,6 @@ class Engagement extends React.Component {
   removeHandler(e) {
     e.preventDefault();
     this.props.dispatch(removeEngagement());
-  }
-
-  nextHandler(e) {
-    e.preventDefault();
-    this.props.history.push("/energy");
   }
 
   closeModal(e) {
@@ -77,7 +71,7 @@ class Engagement extends React.Component {
             />
             <div>
               <button onClick={this.closeModal}>cancel</button>
-              <button onClick={this.closeModal}>OK</button>
+              <button className="ok-btn" onClick={this.closeModal}>OK</button>
             </div>
           </form>
         </div>
