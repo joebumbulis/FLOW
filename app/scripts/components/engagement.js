@@ -32,49 +32,51 @@ class Engagement extends React.Component {
   render() {
     return (
       <main>
-        <Box responsive={false} align="center">
-          <Meter
-            type="arc"
-            vertical={false}
-            min={0}
-            max={10}
-            value={this.props.engagement + 5}
-            onActive={() => {}}
-          />
-          <Box
-            direction="row"
-            justify="between"
-            align="center"
-            pad={{ between: "small" }}
-            responsive={false}
-          >
-            <Value value={this.props.engagement} units="engagement" />
+        <div className="modal-box">
+          <Box responsive={false} align="center">
+            <Meter
+              type="arc"
+              vertical={false}
+              min={0}
+              max={10}
+              value={this.props.engagement + 5}
+              onActive={() => {}}
+            />
+            <Box
+              direction="row"
+              justify="between"
+              align="center"
+              pad={{ between: "small" }}
+              responsive={false}
+            >
+              <Value value={this.props.engagement} units="engagement" />
+            </Box>
           </Box>
-        </Box>
-        <form>
-          <Button
-            className="add-button"
-            onClick={this.addHandler}
-            floating
-            large
-            waves="light"
-            icon="add"
-          />
-          <Button
-            className="remove-button"
-            onClick={this.removeHandler}
-            floating
-            large
-            waves="light"
-            icon="remove"
-          />
-          <Button
-            onClick={this.nextHandler}
-            large
-            waves="light"
-            icon="save arrow forward"
-          />
-        </form>
+          <form>
+            <Button
+              className="add-button"
+              onClick={this.addHandler}
+              floating
+              large
+              waves="light"
+              icon="add"
+            />
+            <Button
+              className="remove-button"
+              onClick={this.removeHandler}
+              floating
+              large
+              waves="light"
+              icon="remove"
+            />
+            <Button
+              onClick={this.nextHandler}
+              large
+              waves="light"
+              icon="save arrow forward"
+            />
+          </form>
+        </div>
       </main>
     );
   }

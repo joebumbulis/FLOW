@@ -1,3 +1,13 @@
 .input-page {
   margin-top: 5rem;
+  .modal-buttons {
+    text-align: center;
+  }
+  button {
+    background: #fff;
+    width: 50%;
+    height: 3rem;
+    border: none;
+    border: .1rem rgba(185, 183, 184, 0.8) solid;
+  }
 }

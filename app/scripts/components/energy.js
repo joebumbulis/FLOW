@@ -31,50 +31,52 @@ class Energy extends React.Component {
 
   render() {
     return (
-      <main>
-        <Box responsive={false} align="center">
-          <Meter
-            type="arc"
-            vertical={false}
-            min={0}
-            max={10}
-            value={this.props.energy + 5}
-            onActive={() => {}}
-          />
-          <Box
-            direction="row"
-            justify="between"
-            align="center"
-            pad={{ between: "small" }}
-            responsive={false}
-          >
-            <Value value={this.props.energy} units="energy" />
+      <main className="modal-container">
+        <div className="modal-box">
+          <Box responsive={false} align="center">
+            <Meter
+              type="arc"
+              vertical={false}
+              min={0}
+              max={10}
+              value={this.props.energy + 5}
+              onActive={() => {}}
+            />
+            <Box
+              direction="row"
+              justify="between"
+              align="center"
+              pad={{ between: "small" }}
+              responsive={false}
+            >
+              <Value value={this.props.energy} units="energy" />
+            </Box>
           </Box>
-        </Box>
-        <form>
-          <Button
-            className="add-button green accent-3"
-            onClick={this.addHandler}
-            floating
-            large
-            waves="light"
-            icon="add"
-          />
-          <Button
-            className="remove-button"
-            onClick={this.removeHandler}
-            floating
-            large
-            waves="light"
-            icon="remove"
-          />
-          <Button
-            onClick={this.nextHandler}
-            large
-            waves="light"
-            icon="save arrow forward"
-          />
-        </form>
+          <form>
+            <Button
+              className="add-button green accent-3"
+              onClick={this.addHandler}
+              floating
+              large
+              waves="light"
+              icon="add"
+            />
+            <Button
+              className="remove-button"
+              onClick={this.removeHandler}
+              floating
+              large
+              waves="light"
+              icon="remove"
+            />
+            <Button
+              onClick={this.nextHandler}
+              large
+              waves="light"
+              icon="save arrow forward"
+            />
+          </form>
+        </div>
       </main>
     );
   }

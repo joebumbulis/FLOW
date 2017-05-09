@@ -12,12 +12,12 @@ class Graph extends React.Component {
           {
             label: "engagement",
             data: [],
-            backgroundColor: "#F6416C"
+            backgroundColor: "#FA0F4D"
           },
           {
             label: "energy",
             data: [],
-            backgroundColor: "#FFDE7D"
+            backgroundColor: "#EBF435"
           }
         ]
       }

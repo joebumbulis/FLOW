@@ -1,0 +1,18 @@
+.modal-container {
+  position: relative;
+}
+
+.modal-box {
+  width: 75%;
+  height: 50%;
+  position: fixed;
+  left: 2.5rem;
+  z-index: 3;
+  // padding-top: 5rem;
+  background-color: rgba(246, 246, 246, 0.8);
+  opacity: .93;
+  // .btn {
+  //   text-align: center;
+  //   width: 100%;
+  // }
+};
