@@ -33,7 +33,7 @@ export default function sendAnswers(
     }).then((data, response) => {
       console.log(data, response);
       dispatch({ type: "CLEAR_INPUTS" });
-      dispatch(getFlowees());
+
       history.push("/feed");
     });
   };

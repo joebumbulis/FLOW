@@ -2,15 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import { Button, Col, Card, Row, CardPanel, Icon } from "react-materialize";
 import _ from "lodash";
+import getFlowees from "../actions/get_flowees.js";
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    console.log("loading");
+    this.props.dispatch(getFlowees());
+  }
+
   render() {
     let moment = require("moment");
-    let sortedAnswers = _.sortBy(this.props.answers, ["created"]);
+    let sortedAnswers = _.sortBy(this.props.answers, ["created"]).reverse();
     return (
       <div className="feed">
         {sortedAnswers.map((answer, i) => {

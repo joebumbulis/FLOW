@@ -13,6 +13,10 @@ import LandingPage from "./components/landing_page.js";
 import CreateAccount from "./components/create_account.js";
 import LogIn from "./components/login.js";
 
+store.dispatch({
+  type: "FIND_LOGIN"
+});
+
 export default function app() {
   render(
     <Provider store={store}>

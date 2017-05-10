@@ -15,6 +15,19 @@ export default function AppReducer(state, action) {
   }
 
   switch (action.type) {
+    case "FIND_LOGIN":
+      let token = window.localStorage.getItem("user-token");
+      if (token) {
+        return Object.assign({}, state, {
+          userInfo: Object.assign({}, state.userInfo, {
+            "user-token": token,
+            ownerId: window.localStorage.getItem("ownerId")
+          })
+        });
+      } else {
+        return state;
+      }
+
     case "LOADED":
       let loadedAnswers = state.answers.slice();
       let savedAnswers = action.answer;
@@ -22,6 +35,8 @@ export default function AppReducer(state, action) {
       return Object.assign({}, state, { answers: loadedAnswers });
 
     case "USER_LOGGED_IN":
+      window.localStorage.setItem("user-token", action.data["user-token"]);
+      window.localStorage.setItem("ownerId", action.data.ownerId);
       return Object.assign({}, state, {
         userInfo: action.data
       });
