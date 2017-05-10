@@ -23,7 +23,6 @@ class LogIn extends React.Component {
     e.preventDefault();
     let email = this.refs.email.value;
     let password = this.refs.password.value;
-    // console.log(email, password, this.props.history);
     this.props.dispatch(sendLogIn(email, password, this.props.history));
   }
 
