@@ -3,9 +3,8 @@ import store from "../store.js";
 import saveAnswer from "../actions/save_answer.js";
 
 const initialState = {
-  userInfo: "",
+  userInfo: {},
   answers: [],
-  answer: "",
   engagement: 0,
   energy: 0
 };

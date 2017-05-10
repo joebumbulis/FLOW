@@ -2,7 +2,14 @@ import React from "react";
 import container from "../containers/all.js";
 import { connect } from "react-redux";
 
-export default function sendAnswers(answer, engagement, energy) {
+export default function sendAnswers(
+  answer,
+  engagement,
+  energy,
+  description,
+  user,
+  history
+) {
   return function(dispatch) {
     // dispatch({ type: "GET_NOTES" });
     return $.ajax({
@@ -18,11 +25,14 @@ export default function sendAnswers(answer, engagement, energy) {
       data: JSON.stringify({
         answer: answer,
         engagement: engagement,
-        energy: energy
+        energy: energy,
+        description: description,
+        ownerId: user
       })
     }).then((data, response) => {
-      console.log("there", response);
+      console.log(data, response);
       // dispatch({ type: "CONFIRM_SAVED" });
+      history.push("/feed");
     });
   };
 }

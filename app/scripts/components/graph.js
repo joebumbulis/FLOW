@@ -17,7 +17,7 @@ class Graph extends React.Component {
           {
             label: "energy",
             data: [],
-            backgroundColor: "#EBF435"
+            backgroundColor: "#0FFA2E"
           }
         ]
       }
@@ -25,14 +25,14 @@ class Graph extends React.Component {
   }
 
   componentWillMount() {
-    this.setPropis(this.props);
+    this.setProps(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setPropis(nextProps);
+    this.setProps(nextProps);
   }
 
-  setPropis(props) {
+  setProps(props) {
     let moment = require("moment");
     var timeArr = props.answers.map((answer, i) => {
       return moment(answer.created).format("MMM Do YY, h:mm a");

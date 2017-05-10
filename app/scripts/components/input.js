@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
 import { Button } from "react-materialize";
-import saveAnswer from "../actions/save_answer.js";
 import InputNavBar from "./input_navbar.js";
 import Engagement from "./engagement.js";
 import Energy from "./energy.js";
@@ -49,11 +48,22 @@ class Input extends React.Component {
     let answer = this.refs.answer.value;
     let engagement = this.props.engagement;
     let energy = this.props.energy;
-    console.log(answer, engagement, energy);
-    if ((answer = " ")) {
-      alert("set focus on input");
+    let description = this.refs.description.value;
+    let user = this.props.userInfo.ownerId;
+    console.log(user);
+    if (answer === "") {
+      this.refs.answer.focus();
     } else {
-      this.props.dispatch(sendAnswer(answer, engagement, energy));
+      this.props.dispatch(
+        sendAnswer(
+          answer,
+          engagement,
+          energy,
+          description,
+          user,
+          this.props.history
+        )
+      );
     }
   }
 

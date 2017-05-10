@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button, Col, Card, Row, CardPanel } from "react-materialize";
+import { Button, Col, Card, Row, CardPanel, Icon } from "react-materialize";
 import _ from "lodash";
 
 class Feed extends React.Component {
@@ -32,12 +32,12 @@ class Feed extends React.Component {
                     <div className="answers-card">
 
                       <div className="answer-eng">
-                        <div className="eng-box" />
+                        <Icon className="eng-box">favorite</Icon>
                         Engagement: {answer.engagement}
                       </div>
 
                       <div className="answer-energy">
-                        <div className="ene-box" />
+                        <Icon className="ene-box">battery_charging_full</Icon>
                         Energy: {answer.energy}
                       </div>
                     </div>

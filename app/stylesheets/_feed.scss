@@ -23,12 +23,10 @@
 }
 
 .eng-box {
-  background: $one-color;
-  width: 1rem;
-  height: 1rem;
+  color: $one-color;
+  font-size: 1rem;
   display: inline-block;
   margin-right: .5rem;
-
 }
 
 .answer-eng {
@@ -38,9 +36,8 @@
 }
 
 .ene-box {
-  background: $two-color;
-  width: 1rem;
-  height: 1rem;
+  color: $two-color;
+  font-size: 1rem;
   display: inline-block;
   margin-right: .5rem;
 

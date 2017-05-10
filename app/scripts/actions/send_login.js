@@ -1,6 +1,5 @@
 export default function userLogin(email, password, history) {
   return function(dispatch) {
-    console.log("loggin in");
     // dispatch({ type: "STARTING_USER_LOGIN" });
     return $.ajax({
       url: "http://api.backendless.com/v1/users/login",
