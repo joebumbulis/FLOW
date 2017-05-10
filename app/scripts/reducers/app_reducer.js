@@ -3,6 +3,7 @@ import store from "../store.js";
 import saveAnswer from "../actions/save_answer.js";
 
 const initialState = {
+  userInfo: "",
   answers: [],
   answer: "",
   engagement: 0,
@@ -20,6 +21,11 @@ export default function AppReducer(state, action) {
       let savedAnswers = action.answer;
       loadedAnswers.push(savedAnswers);
       return Object.assign({}, state, { answers: loadedAnswers });
+
+    case "USER_LOGGED_IN":
+      return Object.assign({}, state, {
+        userInfo: action.data
+      });
 
     case "SAVE_ANSWER":
       return Object.assign({}, state, { answer: action.answer });

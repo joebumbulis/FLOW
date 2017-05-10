@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import container from "../containers/all.js";
 import { Route, Link, NavLink } from "react-router-dom";
 import { Navbar, Icon, Button, Input } from "react-materialize";
+import sendLogIn from "../actions/send_login.js";
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -20,10 +21,10 @@ class LogIn extends React.Component {
 
   logIn(e) {
     e.preventDefault();
-    let email = e.target[0].value;
-    let password = e.target[1].value;
-    let emailsss = this.refs.emailsss.value;
-    console.log(email, password);
+    let email = this.refs.email.value;
+    let password = this.refs.password.value;
+    // console.log(email, password, this.props.history);
+    this.props.dispatch(sendLogIn(email, password, this.props.history));
   }
 
   render() {
@@ -35,24 +36,24 @@ class LogIn extends React.Component {
         </nav>
         <form onSubmit={this.logIn}>
           <div className="login-inputs input-field">
-            <Input ref="email" type="email" placeholder="email" validate>
-              <Icon>email</Icon>
-            </Input>
-            <i className="material-icons">email</i>
-            <input
-              ref="emailsss"
-              type="email"
-              placeholder="emailsss"
-              validate
-            />
-            <Input
-              className="pswd-input"
-              ref="password"
-              type="password"
-              placeholder="password"
-            >
-              <Icon>lock_outline</Icon>
-            </Input>
+            <div>
+              <i className="material-icons prefix">email</i>
+              <input
+                ref="email"
+                type="email"
+                placeholder="email"
+                className="validate"
+              />
+            </div>
+            <div>
+              <i className="material-icons prefix">lock</i>
+              <input
+                ref="password"
+                type="password"
+                placeholder="password"
+                className="validate"
+              />
+            </div>
             <button className="login-btn submit-login">Log In</button>
           </div>
         </form>
