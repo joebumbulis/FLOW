@@ -10,8 +10,10 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    console.log("loading");
-    this.props.dispatch(getFlowees());
+    console.log(this.props.answers);
+    if (this.props.answers.length < 1) {
+      this.props.dispatch(getFlowees());
+    }
   }
 
   render() {

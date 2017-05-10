@@ -83,6 +83,13 @@ export default function AppReducer(state, action) {
 
     case "CLEAR_INPUTS":
       var newState = {
+        engagement: 0,
+        energy: 0
+      };
+      return Object.assign({}, state, newState);
+
+    case "CLEAR_ALL_INPUTS":
+      var newState = {
         answers: [],
         engagement: 0,
         energy: 0
