@@ -26,10 +26,6 @@ export default function AppReducer(state, action) {
         userInfo: action.data
       });
 
-    case "SAVE_ANSWER":
-      return Object.assign({}, state, { answer: action.answer });
-      console.log(state);
-
     case "ADD_ENGAGEMENT":
       var newTotal;
       var oldTotal = state.engagement;
@@ -69,6 +65,14 @@ export default function AppReducer(state, action) {
         newTotal = oldTotal;
       }
       return Object.assign({}, state, { energy: newTotal });
+
+    case "CLEAR_INPUTS":
+      var newState = {
+        answers: [],
+        engagement: 0,
+        energy: 0
+      };
+      return Object.assign({}, state, newState);
   }
 
   console.log("Unhandled State!");

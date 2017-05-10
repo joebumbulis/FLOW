@@ -1,6 +1,7 @@
 import React from "react";
 import container from "../containers/all.js";
 import { connect } from "react-redux";
+import getFlowees from "../actions/get_flowees.js";
 
 export default function sendAnswers(
   answer,
@@ -31,7 +32,8 @@ export default function sendAnswers(
       })
     }).then((data, response) => {
       console.log(data, response);
-      // dispatch({ type: "CONFIRM_SAVED" });
+      dispatch({ type: "CLEAR_INPUTS" });
+      dispatch(getFlowees());
       history.push("/feed");
     });
   };

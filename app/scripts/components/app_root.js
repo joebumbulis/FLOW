@@ -11,7 +11,7 @@ class AppRoot extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     console.log("loading");
     this.props.dispatch(getFlowees());
   }

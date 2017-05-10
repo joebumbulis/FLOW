@@ -32,12 +32,14 @@ class Feed extends React.Component {
                     <div className="answers-card">
 
                       <div className="answer-eng">
-                        <Icon className="eng-box">favorite</Icon>
+                        <Icon className="engage-icon">favorite</Icon>
                         Engagement: {answer.engagement}
                       </div>
 
                       <div className="answer-energy">
-                        <Icon className="ene-box">battery_charging_full</Icon>
+                        <Icon className="energy-icon">
+                          battery_charging_full
+                        </Icon>
                         Energy: {answer.energy}
                       </div>
                     </div>
