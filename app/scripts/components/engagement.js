@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
-import { Button } from "react-materialize";
+import { Button, Icon } from "react-materialize";
 import addEngagement from "../actions/add_engagement.js";
 import removeEngagement from "../actions/remove_engagement.js";
 import { Box, Meter, Label, Value } from "grommet";
@@ -29,11 +29,32 @@ class Engagement extends React.Component {
     this.props.closeModal();
   }
 
+  showHearts(heart) {
+    if (heart > 0) {
+      return <Icon medium className="engage-icon">favorite</Icon>;
+    } else if (heart < 0) {
+      return <Icon medium className="engage-icon-negative">favorite</Icon>;
+    } else {
+      return (
+        <Icon medium className="engage-icon-negative">favorite_border</Icon>
+      );
+    }
+  }
+
   render() {
     return (
       <main>
         <div className="modal-box">
           <Box responsive={false} align="center">
+            <Box
+              direction="row"
+              justify="between"
+              align="center"
+              pad={{ between: "small" }}
+              responsive={false}
+            >
+              <Value value={this.props.engagement} units="engagement" />
+            </Box>
             <Meter
               type="arc"
               vertical={false}
@@ -49,7 +70,7 @@ class Engagement extends React.Component {
               pad={{ between: "small" }}
               responsive={false}
             >
-              <Value value={this.props.engagement} units="engagement" />
+              <Value value={this.showHearts(this.props.engagement)} />
             </Box>
           </Box>
           <form>

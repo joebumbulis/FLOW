@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
-import { Button } from "react-materialize";
+import { Button, Icon } from "react-materialize";
 import addEnergy from "../actions/add_energy.js";
 import removeEnergy from "../actions/remove_energy.js";
 import { Box, Meter, Label, Value } from "grommet";
@@ -29,11 +29,42 @@ class Energy extends React.Component {
     this.props.closeModal();
   }
 
+  showBattery(battery) {
+    if (battery > 0) {
+      return (
+        <Icon medium className="energy-icon">
+          battery_charging_full
+        </Icon>
+      );
+    } else if (battery < 0) {
+      return (
+        <Icon medium className="energy-icon-negative">
+          battery_alert
+        </Icon>
+      );
+    } else {
+      return (
+        <Icon medium className="energy-icon-negative">
+          battery_unknown
+        </Icon>
+      );
+    }
+  }
+
   render() {
     return (
       <main className="modal-container scale-out">
         <div className="modal-box scale-transition">
           <Box responsive={false} align="center">
+            <Box
+              direction="row"
+              justify="between"
+              align="center"
+              pad={{ between: "small" }}
+              responsive={false}
+            >
+              <Value value={this.props.energy} units="energy" />
+            </Box>
             <Meter
               type="arc"
               vertical={false}
@@ -49,7 +80,7 @@ class Energy extends React.Component {
               pad={{ between: "small" }}
               responsive={false}
             >
-              <Value value={this.props.energy} units="energy" />
+              <Value value={this.showBattery(this.props.engagement)} />
             </Box>
           </Box>
           <form>

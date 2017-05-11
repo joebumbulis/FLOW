@@ -35,7 +35,7 @@ class Graph extends React.Component {
   setProps(props) {
     let moment = require("moment");
     var labelArr = props.answers.map((answer, i) => {
-      return moment(answer.created).format("MMM Do YY, h:mm a");
+      return moment(answer.created).format("ddd");
     });
     var energyArr = props.answers.map((answer, i) => {
       return answer.energy;
@@ -44,7 +44,7 @@ class Graph extends React.Component {
       return answer.engagement;
     });
 
-    var dataArr = [energyArr, engagementArr];
+    var dataArr = [engagementArr, energyArr];
     var counter = -1;
     var newDatasets = this.state.data.datasets.map(dataset => {
       counter++;

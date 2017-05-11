@@ -16,6 +16,38 @@ class Feed extends React.Component {
     }
   }
 
+  showHearts(heart) {
+    if (heart > 0) {
+      return <Icon className="engage-icon">favorite</Icon>;
+    } else if (heart < 0) {
+      return <Icon className="engage-icon-negative">favorite</Icon>;
+    } else {
+      return <Icon className="engage-icon-negative">favorite_border</Icon>;
+    }
+  }
+
+  showBattery(battery) {
+    if (battery > 0) {
+      return (
+        <Icon className="energy-icon">
+          battery_charging_full
+        </Icon>
+      );
+    } else if (battery < 0) {
+      return (
+        <Icon className="energy-icon-negative">
+          battery_alert
+        </Icon>
+      );
+    } else {
+      return (
+        <Icon className="energy-icon-negative">
+          battery_unknown
+        </Icon>
+      );
+    }
+  }
+
   render() {
     let moment = require("moment");
     let sortedAnswers = _.sortBy(this.props.answers, ["created"]).reverse();
@@ -40,15 +72,10 @@ class Feed extends React.Component {
                     <div className="answers-card">
 
                       <div className="answer-eng">
-                        <Icon className="engage-icon">favorite</Icon>
-                        Engagement: {answer.engagement}
+                        Engagement: {this.showHearts(answer.engagement)}
                       </div>
-
                       <div className="answer-energy">
-                        <Icon className="energy-icon">
-                          battery_charging_full
-                        </Icon>
-                        Energy: {answer.energy}
+                        Energy: {this.showBattery(answer.energy)}
                       </div>
                     </div>
                   </Card>
