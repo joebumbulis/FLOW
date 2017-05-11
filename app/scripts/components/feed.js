@@ -17,35 +17,52 @@ class Feed extends React.Component {
   }
 
   showHearts(heart) {
-    if (heart > 0) {
-      return <Icon className="engage-icon">favorite</Icon>;
-    } else if (heart < 0) {
-      return <Icon className="engage-icon-negative">favorite</Icon>;
-    } else {
+    if (heart == 0) {
       return <Icon className="engage-icon-negative">favorite_border</Icon>;
     }
+    let newContent = _.fill(new Array(Math.abs(heart)), "heart");
+    return newContent.map(num => {
+      console.log("no matter");
+      if (heart > 0) {
+        return <Icon className="engage-icon">favorite</Icon>;
+      } else if (heart < 0) {
+        return <Icon className="engage-icon-negative">favorite</Icon>;
+      } else {
+        return <Icon className="engage-icon-negative">favorite_border</Icon>;
+      }
+    });
   }
 
   showBattery(battery) {
-    if (battery > 0) {
-      return (
-        <Icon className="energy-icon">
-          battery_charging_full
-        </Icon>
-      );
-    } else if (battery < 0) {
-      return (
-        <Icon className="energy-icon-negative">
-          battery_alert
-        </Icon>
-      );
-    } else {
+    if (battery == 0) {
       return (
         <Icon className="energy-icon-negative">
           battery_unknown
         </Icon>
       );
     }
+    let newContent = _.fill(new Array(Math.abs(battery)), "battery");
+    return newContent.map(num => {
+      if (battery > 0) {
+        return (
+          <Icon className="energy-icon">
+            battery_charging_full
+          </Icon>
+        );
+      } else if (battery < 0) {
+        return (
+          <Icon className="energy-icon-negative">
+            battery_alert
+          </Icon>
+        );
+      } else {
+        return (
+          <Icon className="energy-icon-negative">
+            battery_unknown
+          </Icon>
+        );
+      }
+    });
   }
 
   render() {
@@ -72,10 +89,10 @@ class Feed extends React.Component {
                     <div className="answers-card">
 
                       <div className="answer-eng">
-                        Engagement: {this.showHearts(answer.engagement)}
+                        {this.showHearts(answer.engagement)}
                       </div>
                       <div className="answer-energy">
-                        Energy: {this.showBattery(answer.energy)}
+                        {this.showBattery(answer.energy)}
                       </div>
                     </div>
                   </Card>
