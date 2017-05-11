@@ -34,7 +34,7 @@ class Graph extends React.Component {
 
   setProps(props) {
     let moment = require("moment");
-    var timeArr = props.answers.map((answer, i) => {
+    var labelArr = props.answers.map((answer, i) => {
       return moment(answer.created).format("MMM Do YY, h:mm a");
     });
     var energyArr = props.answers.map((answer, i) => {
@@ -56,7 +56,7 @@ class Graph extends React.Component {
     });
 
     var userData = Object.assign({}, this.state.data, {
-      labels: timeArr,
+      labels: labelArr,
       datasets: newDatasets
     });
 
