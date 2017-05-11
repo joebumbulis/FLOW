@@ -28,40 +28,36 @@
 
 .engage-icon {
   color: $one-color;
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
-  margin-right: .5rem;
 }
 .engage-icon-negative {
-  color: grey;
-  font-size: 1rem;
+  color: #d3d3d3;
+  font-size: 1.5rem;
   display: inline-block;
-  margin-right: .5rem;
 }
 
 .answer-eng {
   float: left;
-  width: 40%;
-  margin-left: 1rem;
+  width: 50%;
+  // margin-left: 1rem;
 }
 
 .energy-icon {
   color: $two-color;
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
-  margin-right: .5rem;
 }
 
 .energy-icon-negative {
-  color: grey;
-  font-size: 1rem;
+  color: #d3d3d3;
+  font-size: 1.5rem;
   display: inline-block;
-  margin-right: .5rem;
 }
 
 
 .answer-energy {
   float: right;
-  width: 30%;
-  margin-right: 4rem;
+  width: 50%;
+  // margin-right: 1rem;
 }

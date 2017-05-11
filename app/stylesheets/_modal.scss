@@ -3,7 +3,7 @@
 }
 
 .modal-box {
-  width: 75%;
+  width: 80%;
   height: 50%;
   position: fixed;
   left: 2.5rem;
@@ -18,3 +18,8 @@
     color: $one-color;
   }
 };
+
+.title {
+  color: $one-color;
+  text-transform: uppercase;
+}

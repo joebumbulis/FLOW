@@ -5,6 +5,7 @@ import { Button, Icon } from "react-materialize";
 import addEngagement from "../actions/add_engagement.js";
 import removeEngagement from "../actions/remove_engagement.js";
 import { Box, Meter, Label, Value } from "grommet";
+import _ from "lodash";
 
 class Engagement extends React.Component {
   constructor(props) {
@@ -30,15 +31,24 @@ class Engagement extends React.Component {
   }
 
   showHearts(heart) {
-    if (heart > 0) {
-      return <Icon medium className="engage-icon">favorite</Icon>;
-    } else if (heart < 0) {
-      return <Icon medium className="engage-icon-negative">favorite</Icon>;
-    } else {
+    if (heart == 0) {
       return (
         <Icon medium className="engage-icon-negative">favorite_border</Icon>
       );
     }
+    let newContent = _.fill(new Array(Math.abs(heart)), "heart");
+    return newContent.map(num => {
+      console.log("no matter");
+      if (heart > 0) {
+        return <Icon medium className="engage-icon">favorite</Icon>;
+      } else if (heart < 0) {
+        return <Icon medium className="engage-icon-negative">favorite</Icon>;
+      } else {
+        return (
+          <Icon medium className="engage-icon-negative">favorite_border</Icon>
+        );
+      }
+    });
   }
 
   render() {
@@ -53,7 +63,11 @@ class Engagement extends React.Component {
               pad={{ between: "small" }}
               responsive={false}
             >
-              <Value value={this.props.engagement} units="engagement" />
+              <Value
+                className="title"
+                value={this.props.engagement}
+                units="engagement"
+              />
             </Box>
             <Meter
               type="arc"

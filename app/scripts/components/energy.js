@@ -5,6 +5,7 @@ import { Button, Icon } from "react-materialize";
 import addEnergy from "../actions/add_energy.js";
 import removeEnergy from "../actions/remove_energy.js";
 import { Box, Meter, Label, Value } from "grommet";
+import _ from "lodash";
 
 class Energy extends React.Component {
   constructor(props) {
@@ -30,25 +31,35 @@ class Energy extends React.Component {
   }
 
   showBattery(battery) {
-    if (battery > 0) {
-      return (
-        <Icon medium className="energy-icon">
-          battery_charging_full
-        </Icon>
-      );
-    } else if (battery < 0) {
-      return (
-        <Icon medium className="energy-icon-negative">
-          battery_alert
-        </Icon>
-      );
-    } else {
+    if (battery == 0) {
       return (
         <Icon medium className="energy-icon-negative">
           battery_unknown
         </Icon>
       );
     }
+    let newContent = _.fill(new Array(Math.abs(battery)), "battery");
+    return newContent.map(num => {
+      if (battery > 0) {
+        return (
+          <Icon medium className="energy-icon">
+            battery_charging_full
+          </Icon>
+        );
+      } else if (battery < 0) {
+        return (
+          <Icon medium className="energy-icon-negative">
+            battery_alert
+          </Icon>
+        );
+      } else {
+        return (
+          <Icon medium className="energy-icon-negative">
+            battery_unknown
+          </Icon>
+        );
+      }
+    });
   }
 
   render() {
@@ -63,7 +74,11 @@ class Energy extends React.Component {
               pad={{ between: "small" }}
               responsive={false}
             >
-              <Value value={this.props.energy} units="energy" />
+              <Value
+                className="title"
+                value={this.props.energy}
+                units="energy"
+              />
             </Box>
             <Meter
               type="arc"
@@ -80,7 +95,7 @@ class Energy extends React.Component {
               pad={{ between: "small" }}
               responsive={false}
             >
-              <Value value={this.showBattery(this.props.engagement)} />
+              <Value value={this.showBattery(this.props.energy)} />
             </Box>
           </Box>
           <form>
