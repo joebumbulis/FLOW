@@ -34,7 +34,7 @@ class Energy extends React.Component {
     if (battery == 0) {
       return (
         <Icon medium className="energy-icon-negative">
-          battery_unknown
+          battery_std
         </Icon>
       );
     }
@@ -50,12 +50,6 @@ class Energy extends React.Component {
         return (
           <Icon medium className="energy-icon-negative">
             battery_alert
-          </Icon>
-        );
-      } else {
-        return (
-          <Icon medium className="energy-icon-negative">
-            battery_unknown
           </Icon>
         );
       }

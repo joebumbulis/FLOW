@@ -10,7 +10,6 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.answers);
     if (this.props.answers.length < 1) {
       this.props.dispatch(getFlowees());
     }
@@ -22,13 +21,10 @@ class Feed extends React.Component {
     }
     let newContent = _.fill(new Array(Math.abs(heart)), "heart");
     return newContent.map(num => {
-      console.log("no matter");
       if (heart > 0) {
         return <Icon className="engage-icon">favorite</Icon>;
       } else if (heart < 0) {
         return <Icon className="engage-icon-negative">favorite</Icon>;
-      } else {
-        return <Icon className="engage-icon-negative">favorite_border</Icon>;
       }
     });
   }
@@ -37,7 +33,7 @@ class Feed extends React.Component {
     if (battery == 0) {
       return (
         <Icon className="energy-icon-negative">
-          battery_unknown
+          battery_std
         </Icon>
       );
     }
@@ -53,12 +49,6 @@ class Feed extends React.Component {
         return (
           <Icon className="energy-icon-negative">
             battery_alert
-          </Icon>
-        );
-      } else {
-        return (
-          <Icon className="energy-icon-negative">
-            battery_unknown
           </Icon>
         );
       }
@@ -77,14 +67,19 @@ class Feed extends React.Component {
 
               <div className="row">
 
-                <Col m={6} s={12}>
+                <Col l={6} m={12} s={12}>
                   <Card
                     className="white hoverable"
                     textClassName="black-text"
                     title={answer.answer}
                   >
+
                     <div className="card-time">
                       {time}
+                    </div>
+                    <div className="edit-icons">
+                      <Icon>mode_edit</Icon>
+                      <Icon>delete_forever</Icon>
                     </div>
                     <div className="answers-card">
 

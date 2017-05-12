@@ -22,7 +22,7 @@ export default function app() {
     <Provider store={store}>
       <Router>
         <div>
-          <Route path="/" component={AppRoot} />
+          <Route exact path="/" component={LandingPage} />
           <Route exact path="/feed" component={HomeFeed} />
           <Route exact path="/create_account" component={CreateAccount} />
           <Route exact path="/login" component={LogIn} />

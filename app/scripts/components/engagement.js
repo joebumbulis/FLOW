@@ -43,10 +43,6 @@ class Engagement extends React.Component {
         return <Icon medium className="engage-icon">favorite</Icon>;
       } else if (heart < 0) {
         return <Icon medium className="engage-icon-negative">favorite</Icon>;
-      } else {
-        return (
-          <Icon medium className="engage-icon-negative">favorite_border</Icon>
-        );
       }
     });
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Line } from "react-chartjs-2";
+import _ from "lodash";
 
 class Graph extends React.Component {
   constructor(props) {
@@ -34,13 +35,14 @@ class Graph extends React.Component {
 
   setProps(props) {
     let moment = require("moment");
-    var labelArr = props.answers.map((answer, i) => {
+    let answers = _.sortBy(props.answers, ["created"]);
+    var labelArr = answers.map((answer, i) => {
       return moment(answer.created).format("ddd");
     });
-    var energyArr = props.answers.map((answer, i) => {
+    var energyArr = answers.map((answer, i) => {
       return answer.energy;
     });
-    var engagementArr = props.answers.map((answer, i) => {
+    var engagementArr = answers.map((answer, i) => {
       return answer.engagement;
     });
 

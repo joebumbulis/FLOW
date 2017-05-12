@@ -17,7 +17,8 @@
   float: left;
   // width: 20%;
   font-size: 1rem;
-  color: $one-color
+  color: $one-color;
+  appearance: none;
 }
 
 .arrow-icon {
@@ -35,6 +36,8 @@
   float: right;
   color: $one-color;
   margin-right: 1rem;
+  appearance: none;
+  appearance: none;
 }
 
 .input-field input[type=email] {
@@ -64,4 +67,5 @@ icon:focus {
   position: absolute;
   top: -97px;
   right: 0;
+  appearance: none;
 }
