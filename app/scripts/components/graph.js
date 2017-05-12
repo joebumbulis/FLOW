@@ -35,7 +35,7 @@ class Graph extends React.Component {
 
   setProps(props) {
     let moment = require("moment");
-    let answers = _.sortBy(props.answers, ["created"]);
+    let answers = _.orderBy(props.answers, ["created"], ["asc"]);
     var labelArr = answers.map((answer, i) => {
       return moment(answer.created).format("ddd");
     });

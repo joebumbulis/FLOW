@@ -3,16 +3,23 @@ import { connect } from "react-redux";
 import { Button, Col, Card, Row, CardPanel, Icon } from "react-materialize";
 import _ from "lodash";
 import getFlowees from "../actions/get_flowees.js";
+import deletePost from "../actions/delete_post.js";
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
+    this.clickDelete = this.clickDelete.bind(this);
   }
 
   componentDidMount() {
     if (this.props.answers.length < 1) {
       this.props.dispatch(getFlowees());
     }
+  }
+
+  clickDelete(answer, e) {
+    console.log("Answer", answer);
+    this.props.dispatch(deletePost(answer));
   }
 
   showHearts(heart) {
@@ -57,7 +64,7 @@ class Feed extends React.Component {
 
   render() {
     let moment = require("moment");
-    let sortedAnswers = _.sortBy(this.props.answers, ["created"]).reverse();
+    let sortedAnswers = _.orderBy(this.props.answers, ["created"], ["desc"]);
     return (
       <div className="feed">
         {sortedAnswers.map((answer, i) => {
@@ -79,7 +86,11 @@ class Feed extends React.Component {
                     </div>
                     <div className="edit-icons">
                       <Icon className="edit-icon">mode_edit</Icon>
-                      <Icon className="delete-icon">delete_forever</Icon>
+                      <Icon className="delete-icon">
+                        <div onClick={this.clickDelete.bind(this, answer)}>
+                          delete_forever
+                        </div>
+                      </Icon>
                     </div>
                     <div className="answers-card">
 

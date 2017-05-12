@@ -10,12 +10,7 @@ import NavBar from "./nav_bar.js";
 class HomeFeed extends React.Component {
   constructor(props) {
     super(props);
-    // this.props.dispatch(getFlowees());
   }
-
-  // componentWillMount() {
-  //   console.log("loading");
-  // }
 
   render() {
     return (

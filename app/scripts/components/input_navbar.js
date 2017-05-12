@@ -31,11 +31,6 @@ class InputNavBar extends React.Component {
   saveAnswer() {
     this.props.saveAnswer();
   }
-  // resultsClick({ history }) {
-  //   console.log("results clicked");
-  //   onClick={this.saveAnswer};
-  //   return <h2 className="save" onClick={() => history.push("/feed")}>save</h2>;
-  // }
 
   render() {
     return (
@@ -45,22 +40,6 @@ class InputNavBar extends React.Component {
         <Route render={this.homeClick} />
       </div>
     );
-
-    // <div className="row">
-    //   <nav className="navbar" role="navigation">
-    //     <div className="menuToggle" id="menuToggle">
-    //       <input type="checkbox" />
-    //       <span />
-    //       <span />
-    //       <span />
-    //       <ul id="menu">
-    //         <Route render={this.homeClick} />
-    //         <Route render={this.inputClick} />
-    //         <Route render={this.resultsClick} />
-    //       </ul>
-    //     </div>
-    //   </nav>
-    // </div>
   }
 }
 
