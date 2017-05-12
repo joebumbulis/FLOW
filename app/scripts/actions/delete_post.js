@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import getFlowees from "../actions/get_flowees.js";
 
 export default function deletePost(answer) {
-  console.log("delete sent AJAX");
   let id = answer.objectId;
-  return function(dispath) {
+  console.log(answer);
+  return function(dispatch) {
     return $.ajax({
       method: "DELETE",
       url: "https://api.backendless.com/v1/data/flowee/" + id,
@@ -15,7 +15,8 @@ export default function deletePost(answer) {
         "secret-key": "71A87D8E-1294-CD5F-FFF6-C9311CC4CD00"
       }
     }).then((data, response) => {
-      console.log(response);
+      console.log(data);
+      dispatch({ type: "DELETE_POST", answer: answer });
     });
   };
 }

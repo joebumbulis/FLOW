@@ -1,6 +1,7 @@
 import { createStore } from "redux";
 import store from "../store.js";
 import saveAnswer from "../actions/save_answer.js";
+import _ from "lodash";
 
 const initialState = {
   userInfo: {},
@@ -95,6 +96,13 @@ export default function AppReducer(state, action) {
         energy: 0
       };
       return Object.assign({}, state, newState);
+
+    case "DELETE_POST":
+      let oldAnswers = state.answers.slice();
+      let removeAnswer = action.answer;
+      let newAnswers = _.without(oldAnswers, removeAnswer);
+      return Object.assign({}, state, { answers: newAnswers });
+      console.log(newAnswers);
   }
 
   console.log("Unhandled State!");

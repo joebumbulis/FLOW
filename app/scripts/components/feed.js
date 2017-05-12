@@ -17,8 +17,8 @@ class Feed extends React.Component {
     }
   }
 
+
   clickDelete(answer, e) {
-    console.log("Answer", answer);
     this.props.dispatch(deletePost(answer));
   }
 
