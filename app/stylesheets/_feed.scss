@@ -29,9 +29,22 @@
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1rem;
-  color: orange;
   padding-top: .4rem;
+}
+.edit-icon {
+  font-size: 1.5rem;
+}
+
+.edit-icon:hover {
+  color: green;
+}
+
+.delete-icon {
+  font-size: 1.5rem;
+}
+
+.delete-icon:hover {
+  color: red;
 }
 
 .card-time {
@@ -59,7 +72,6 @@
 .answer-eng {
   float: left;
   width: 50%;
-  padding-bottom: .5rem;
 }
 
 .energy-icon {
@@ -78,5 +90,4 @@
 .answer-energy {
   float: right;
   width: 50%;
-  padding-bottom: .5rem;
 }

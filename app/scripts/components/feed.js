@@ -61,7 +61,7 @@ class Feed extends React.Component {
     return (
       <div className="feed">
         {sortedAnswers.map((answer, i) => {
-          let time = moment(answer.created).format("MMM Do YY, h:mm a");
+          let time = moment(answer.created).format("MMM Do YYYY, h:mm a");
           return (
             <div key={i}>
 
@@ -78,8 +78,8 @@ class Feed extends React.Component {
                       {time}
                     </div>
                     <div className="edit-icons">
-                      <Icon>mode_edit</Icon>
-                      <Icon>delete_forever</Icon>
+                      <Icon className="edit-icon">mode_edit</Icon>
+                      <Icon className="delete-icon">delete_forever</Icon>
                     </div>
                     <div className="answers-card">
 
