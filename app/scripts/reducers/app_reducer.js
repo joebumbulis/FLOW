@@ -42,6 +42,14 @@ export default function AppReducer(state, action) {
         userInfo: action.data
       });
 
+    case "CLEAR_USER":
+      window.localStorage.setItem("user-token", null);
+      window.localStorage.setItem("ownerId", null);
+      return Object.assign({}, state, {
+        userInfo: {},
+        answers: []
+      });
+
     case "ADD_ENGAGEMENT":
       var newTotal;
       var oldTotal = state.engagement;

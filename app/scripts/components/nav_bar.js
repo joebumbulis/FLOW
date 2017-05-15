@@ -14,6 +14,7 @@ class NavBar extends React.Component {
     this.homeClick = this.homeClick.bind(this);
     this.inputClick = this.inputClick.bind(this);
     this.clickProfile = this.clickProfile.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   homeClick({ history }) {
@@ -44,10 +45,17 @@ class NavBar extends React.Component {
   render() {
     var modal = "";
     if (this.state.userMenu) {
-      modal = <UserMenu closeModal={this.closeModal} />;
+      modal = (
+        <Route
+          render={({ history }) => (
+            <UserMenu history={history} closeModal={this.closeModal} />
+          )}
+        />
+      );
     }
     return (
       <div className="navbar">
+        {modal}
         <div onClick={this.clickProfile}>
           <Icon className="profile-dropdown-menu">
             perm_identity

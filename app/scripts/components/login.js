@@ -8,7 +8,7 @@ import sendLogIn from "../actions/send_login.js";
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.logIn = this.logIn.bind(this);
   }
 

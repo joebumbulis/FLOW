@@ -1,0 +1,33 @@
+.user-menu-container {
+  position: relative;
+  z-index: 1000;
+}
+
+.user-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  max-width: 270px;
+  z-index: 4;
+  background: $one-color;
+  color: #fff;
+  height: 3rem;
+  li {
+    float: right;
+    font-size: 1.7rem;
+    text-align: center;
+    padding-right: 1rem;
+    padding-top: .4rem;
+  }
+  button {
+    float: left;
+    border: none;
+    background: $one-color;
+    color: #fff;
+  }
+  button * {
+    font-size: 2.7rem;
+  }
+}
