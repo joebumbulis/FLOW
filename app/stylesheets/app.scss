@@ -9,7 +9,10 @@
 @import "grommet-core/index.scss";
 @import "landing_page.scss";
 @import "login-page.scss";
+@import "navbar_menu.scss";
 
+@media only screen
+  and (min-width: 770px){
 
 html {
     body {
@@ -17,5 +20,8 @@ html {
         padding: 0;
         background: #f6f6f6;
         background-attachment: fixed;
+        width: 80%;
+        margin: 0 auto;
     }
+}
 }

@@ -23,7 +23,20 @@ export default function app() {
       <Router>
         <div>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/feed" component={HomeFeed} />
+          <Route
+            exact
+            path="/feed"
+            // render={ props => {
+            //   if (store.getState().userInfo === undefined){
+            //     return <Redirect to="/" /> {
+            //       else {
+            //         return <HomeFeed {...props}/>
+            //       }
+            //     }
+            //   }
+            // }} />
+            component={HomeFeed}
+          />
           <Route exact path="/create_account" component={CreateAccount} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/open" component={LandingPage} />

@@ -38,7 +38,6 @@ class Engagement extends React.Component {
     }
     let newContent = _.fill(new Array(Math.abs(heart)), "heart");
     return newContent.map(num => {
-      console.log("no matter");
       if (heart > 0) {
         return <Icon medium className="engage-icon">favorite</Icon>;
       } else if (heart < 0) {
