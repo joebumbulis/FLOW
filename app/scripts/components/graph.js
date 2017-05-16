@@ -37,15 +37,17 @@ class Graph extends React.Component {
   setProps(props) {
     let moment = require("moment");
     let answers = _.orderBy(props.answers, ["created"], ["asc"]);
-    var labelArr = answers.map((answer, i) => {
-      return moment(answer.created).format("ddd");
+    // let shortAns = _.without(answers, ["created"].3600000);
+    // console.log(shortAns);
+    let lastDay = answers.filter(answer => {
+      if (new Date().getTime() - answer.created <= 86400000) {
+        return answer;
+      }
     });
-    var energyArr = answers.map((answer, i) => {
-      return answer.energy;
-    });
-    var engagementArr = answers.map((answer, i) => {
-      return answer.engagement;
-    });
+    console.log("HELLOOOO", lastDay);
+    var labelArr = answers.map(answer => moment(answer.created).format("ddd"));
+    var energyArr = answers.map(answer => answer.energy);
+    var engagementArr = answers.map(answer => answer.engagement);
 
     var dataArr = [engagementArr, energyArr];
     var counter = -1;
@@ -72,8 +74,8 @@ class Graph extends React.Component {
     return (
       <div>
         <Carousel className="carousel" autoplay={false}>
-          <Bar data={this.state.data} />
           <Line data={this.state.data} />
+          <Bar data={this.state.data} />
         </Carousel>
       </div>
     );
