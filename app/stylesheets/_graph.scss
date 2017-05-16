@@ -1,11 +1,21 @@
-canvas {
-  margin-top: 3rem;
-  padding-bottom: 1rem;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  background: #fff;
-  box-sizing: border-box;
-  border-bottom: .1rem rgba(185, 183, 184, 0.8) solid;
+#app {
+  canvas {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    box-sizing: border-box;
+    border-bottom: .1rem rgba(185, 183, 184, 0.8) solid;
 
+  }
+
+  .grommetux-carousel {
+      margin-top: 3rem;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      background: #fff;
+      box-sizing: border-box;
+      height: 200px;
+  }
 }

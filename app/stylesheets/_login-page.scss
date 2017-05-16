@@ -37,7 +37,8 @@
   color: $one-color;
   margin-right: 1rem;
   appearance: none;
-  appearance: none;
+  border: none;
+  background: #fff;
 }
 
 .input-field input[type=email] {
