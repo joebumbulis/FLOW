@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Line, Bar, Donut } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import _ from "lodash";
 import { Box, Carousel } from "grommet";
 
@@ -74,7 +74,6 @@ class Graph extends React.Component {
         <Carousel className="carousel" autoplay={false}>
           <Bar data={this.state.data} />
           <Line data={this.state.data} />
-          <Donut data={this.state.data} />
         </Carousel>
       </div>
     );

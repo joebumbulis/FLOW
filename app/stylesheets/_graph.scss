@@ -18,4 +18,12 @@
       box-sizing: border-box;
       height: 200px;
   }
+  .grommetux-carousel__control--active {
+    stroke: $one-color;
+    fill: $one-color;
+  }
+  button:focus {
+    background-color: rgba(249, 245, 245, 245);
+    opacity: .5,
+  }
 }
