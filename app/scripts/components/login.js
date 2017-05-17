@@ -38,7 +38,7 @@ class LogIn extends React.Component {
         <form onSubmit={this.logIn}>
           <div className="login-inputs input-field">
             <div>
-              <i className="material-icons prefix">email</i>
+              <i className="material-icons prefix input-icon">email</i>
               <input
                 ref="email"
                 type="email"
@@ -47,7 +47,7 @@ class LogIn extends React.Component {
               />
             </div>
             <div>
-              <i className="material-icons prefix">lock</i>
+              <i className="material-icons prefix input-icon">lock</i>
               <input
                 ref="password"
                 type="password"

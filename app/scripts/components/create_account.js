@@ -29,6 +29,10 @@ class CreateAccount extends React.Component {
     );
   }
 
+  renderLoginMessage() {
+    console.log("WAIT WAIT");
+  }
+
   render() {
     return (
       <div>
@@ -39,7 +43,7 @@ class CreateAccount extends React.Component {
         <form onSubmit={this.registerAccount}>
           <div className="login-inputs input-field">
             <div>
-              <i className="material-icons prefix">account_box</i>
+              <i className="material-icons prefix input-icon">account_box</i>
               <input
                 ref="name"
                 type="text"
@@ -48,7 +52,7 @@ class CreateAccount extends React.Component {
               />
             </div>
             <div>
-              <i className="material-icons prefix">email</i>
+              <i className="material-icons prefix input-icon">email</i>
               <input
                 ref="email"
                 type="email"
@@ -57,7 +61,7 @@ class CreateAccount extends React.Component {
               />
             </div>
             <div>
-              <i className="material-icons prefix">lock</i>
+              <i className="material-icons prefix input-icon">lock</i>
               <input
                 ref="password"
                 type="password"
