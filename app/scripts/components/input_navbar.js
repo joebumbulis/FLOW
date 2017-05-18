@@ -10,19 +10,16 @@ class InputNavBar extends React.Component {
     super(props);
     this.homeClick = this.homeClick.bind(this);
     this.inputClick = this.inputClick.bind(this);
-    // this.resultsClick = this.resultsClick.bind(this);
     this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   homeClick({ history }) {
-    console.log("Home Clicked");
     return (
       <h2 className="brand" onClick={() => history.push("/feed")}>flowee</h2>
     );
   }
 
   inputClick({ history }) {
-    console.log("input clicked");
     return (
       <h2 className="cancel" onClick={() => history.push("/feed")}>cancel</h2>
     );

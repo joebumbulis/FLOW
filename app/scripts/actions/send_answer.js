@@ -31,9 +31,7 @@ export default function sendAnswers(
         ownerId: user
       })
     }).then((data, response) => {
-      console.log(data, response);
       dispatch({ type: "CLEAR_ALL_INPUTS" });
-
       history.push("/feed");
     });
   };

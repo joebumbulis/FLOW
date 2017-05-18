@@ -15,7 +15,6 @@ export default function deletePost(answer) {
         "secret-key": "71A87D8E-1294-CD5F-FFF6-C9311CC4CD00"
       }
     }).then((data, response) => {
-      console.log(data);
       dispatch({ type: "DELETE_POST", answer: answer });
     });
   };

@@ -18,14 +18,12 @@ class NavBar extends React.Component {
   }
 
   homeClick({ history }) {
-    console.log("Home Clicked");
     return (
       <h2 className="brand" onClick={() => history.push("/feed")}>flowee</h2>
     );
   }
 
   inputClick({ history }) {
-    console.log("input clicked");
     return <h2 className="input" onClick={() => history.push("/input")}>+</h2>;
   }
 

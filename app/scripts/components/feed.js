@@ -17,7 +17,6 @@ class Feed extends React.Component {
     }
   }
 
-
   clickDelete(answer, e) {
     this.props.dispatch(deletePost(answer));
   }
@@ -85,7 +84,6 @@ class Feed extends React.Component {
                       {time}
                     </div>
                     <div className="edit-icons">
-                      <Icon className="edit-icon">mode_edit</Icon>
                       <Icon className="delete-icon">
                         <div onClick={this.clickDelete.bind(this, answer)}>
                           delete_forever

@@ -39,12 +39,11 @@ class Graph extends React.Component {
     let answers = _.orderBy(props.answers, ["created"], ["asc"]);
     // let shortAns = _.without(answers, ["created"].3600000);
     // console.log(shortAns);
-    let lastDay = answers.filter(answer => {
-      if (new Date().getTime() - answer.created <= 86400000) {
-        return answer;
-      }
-    });
-    console.log("HELLOOOO", lastDay);
+    // let lastDay = answers.filter(answer => {
+    //   if (new Date().getTime() - answer.created <= 86400000) {
+    //     return answer;
+    //   }
+    // });
     var labelArr = answers.map(answer => moment(answer.created).format("ddd"));
     var energyArr = answers.map(answer => answer.energy);
     var engagementArr = answers.map(answer => answer.engagement);

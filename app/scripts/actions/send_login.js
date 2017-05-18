@@ -16,7 +16,6 @@ export default function userLogin(email, password, history) {
         password: password
       })
     }).then(data => {
-      console.log(data);
       dispatch({ type: "USER_LOGGED_IN", data: data });
       history.push("/feed");
     });
