@@ -18,6 +18,10 @@
       box-sizing: border-box;
       height: 200px;
   }
+.grommetux-carousel__controls {
+  bottom: 0;
+}
+
   .grommetux-carousel__control--active {
     stroke: $one-color;
     fill: $one-color;

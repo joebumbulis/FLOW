@@ -1,16 +1,12 @@
 @import "vars.scss";
 
 .navbar {
-  // background: linear-gradient(to left, #f4c4f3, #fc67fa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  // background: linear-gradient(to top, #f7ff00, #db36a4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  // background: linear-gradient(to top, $one-color, #f09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: #fff;
-  height: 3rem;
+  height: 5rem;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
-  // box-sizing: border-box;
+  z-index: 2;
   margin: 0 auto;
   border-bottom: .1rem solid $one-color;
 }

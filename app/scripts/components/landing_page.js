@@ -8,7 +8,6 @@ class LandingPage extends React.Component {
   }
 
   createAccount({ history }) {
-    console.log("input clicked");
     return (
       <button
         className="create-btn"
@@ -20,7 +19,6 @@ class LandingPage extends React.Component {
   }
 
   login({ history }) {
-    console.log("input clicked");
     return (
       <button className="login-btn" onClick={() => history.push("/login")}>
         Log In
