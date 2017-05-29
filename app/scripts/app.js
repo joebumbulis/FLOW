@@ -25,7 +25,7 @@ export default function app() {
           <Route exact path="/" component={LandingPage} />
           <Route
             exact
-            path="/feed"
+            path="/feed/:days?"
             // render={ props => {
             //   if (store.getState().userInfo === undefined){
             //     return <Redirect to="/" /> {

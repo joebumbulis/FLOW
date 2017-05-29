@@ -6,7 +6,7 @@
     background: #fff;
     box-sizing: border-box;
     border-bottom: .1rem rgba(185, 183, 184, 0.8) solid;
-
+    height: 100%;
   }
 
   .grommetux-carousel {
@@ -30,4 +30,59 @@
     background-color: rgba(249, 245, 245, 245);
     opacity: .5,
   }
+
+  @media only screen
+    and (min-width: 320px) {
+      canvas {
+        height: 180px;
+      }
+      .grommetux-carousel {
+        height: 180px;
+      }
+    }
+
+    @media only screen
+      and (min-width: 360px) {
+        canvas {
+          height: 200px;
+        }
+        .grommetux-carousel {
+          height: 200px;
+        }
+      }
+
+      @media only screen
+        and (min-width: 400px) {
+          canvas {
+            height: 100%
+          }
+          .grommetux-carousel {
+            height: 250px;
+          }
+        }
+
+
+
+      @media only screen
+        and (min-width: 500px) {
+          canvas {
+            height: 100%
+          }
+          .grommetux-carousel {
+            height: 300px;
+          }
+        }
+
+    @media only screen
+      and (min-width: 700px) {
+        .grommetux-carousel {
+          height: 400px;
+        }
+      }
+      @media only screen
+        and (min-width: 760px) {
+          .grommetux-carousel {
+            height: 400px;
+          }
+        }
 }

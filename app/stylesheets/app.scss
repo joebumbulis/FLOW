@@ -10,18 +10,19 @@
 @import "landing_page.scss";
 @import "login-page.scss";
 @import "user-menu.scss";
+//
 
-@media only screen
-  and (min-width: 770px){
+#app {
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
+  background-attachment: fixed;
+  width: 100%;
+  margin: 0 auto;
 
-html {
-    body {
-        margin: 0;
-        padding: 0;
-        background: #f6f6f6;
-        background-attachment: fixed;
-        width: 80%;
-        margin: 0 auto;
+  @media(min-width: 320px){
+      #app {
+        width: 320px;
+      }
     }
-}
 }

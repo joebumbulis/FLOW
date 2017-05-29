@@ -16,11 +16,21 @@ class HomeFeed extends React.Component {
     return (
       <div>
         <NavBar />
-        <Graph answers={this.props.answers} />
+        <Graph answers={this.props.top} />
         <Feed answers={this.props.answers} />
       </div>
     );
   }
 }
 
-export default connect(state => state)(HomeFeed);
+function giveMeTopAnswers(state, num) {
+  return state.answers.slice(0, num);
+}
+
+export default connect((state, props) => {
+  const days = props.match.params.days ? parseInt(props.match.params.days) : 10;
+  return {
+    top: giveMeTopAnswers(state, days),
+    answers: state.answers
+  };
+})(HomeFeed);
